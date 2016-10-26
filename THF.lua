@@ -74,17 +74,17 @@ function init_gear_sets()
 
     sets.TreasureHunter = {hands="Plun. Armlets", feet="Skulker's Poulaines"}
     sets.ExtraRegen = {head="Ocelomeh Headpiece +1",neck="Lissome Necklace"}
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
+    sets.Kiting = {feet="Jute Boots +1"}
 
     sets.buff['Sneak Attack'] = {ammo="Honed Tathlum",
 		head="Lilitu Headpiece",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Ramuh Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Pursuer's Doublet 
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Pursuer's Doublet 
 
     sets.buff['Trick Attack'] = {ammo="Honed Tathlum",
 		head="Lilitu Headpiece",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Garuda Ring",ring2="Garuda Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Pursuer's Doublet 
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Pursuer's Doublet 
 
 	sets.buff['Flee'] = {feet="Pill. Poulaines +1"}
 		
@@ -113,12 +113,12 @@ function init_gear_sets()
 	sets.precast.JA['Sneak Attack'] = {ammo="Honed Tathlum",
 		head="Lilitu Headpiece",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Ramuh Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
 
 	sets.precast.JA['Trick Attack'] = {ammo="Honed Tathlum",
 		head="Lilitu Headpiece",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Garuda Ring",ring2="Garuda Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
 
 
     -- Waltz set (chr and vit)
@@ -133,7 +133,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 
 	sets.precast.FC = {ammo="Impatiens",
-	head="Anwig Salade",ear2="Loquacious Earring",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",ear1="Mendi. Earring",
+	head="Herculean Helm",neck="Voltsurge Torque",ear2="Loquacious Earring",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",ear1="Mendi. Earring",
 	legs="Homan Cosciales",body="Mirke Wardecors"}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -206,13 +206,13 @@ function init_gear_sets()
     --------------------------------------
 
     sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Anwig Salade",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Jeweled Collar",
+		head="Herculean Helm",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
 		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Mujin Mantle",waist="Cetl Belt",legs="Homam Cosciales",feet="Rawhide Boots"}
 
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Impatiens",
-		head="Anwig Salade",neck="Magoraga Beads",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		head="Herculean Helm",neck="Magoraga Beads",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Mujin Mantle",waist="Cetl Belt",legs="Homam Cosciales",feet="Rawhide Boots"}
 
@@ -230,7 +230,7 @@ function init_gear_sets()
 	sets.midcast.RangedAttack.Acc = {
 		head="Alhazen Hat",neck="Erudit. Necklace",ear1="Clearview Earring",ear2="Volley Earring",
 		body="Pursuer's Doublet ",hands="Floral Gauntlets",ring1="Hajduk Ring",ring2="Hajduk Ring",
-		back="Libeccio Mantle",waist="Aquiline Belt",legs="Iuitl Tights",feet="Rawhide Boots"}
+		back="Libeccio Mantle",waist="Aquiline Belt",legs="Herculean Trousers",feet="Rawhide Boots"}
 
 
     --------------------------------------
@@ -239,50 +239,50 @@ function init_gear_sets()
 
     -- Resting sets
 sets.resting = {head="Uk'uxkaj Cap",neck="Lissome Necklace",
-		ring1="Matrimony Band",ring2="Paguroidea Ring"}
+		ring1="Matrimony Band",ring2="Defending Ring"}
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {range="Raider's Boomerang",
 		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Jute Boots +1"}
 
 	sets.idle.ACC = {ammo="Honed Tathlum",
 		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Jute Boots +1"}
 	
-	sets.idle.Town = {main="Taming Sari", sub="Sandung",range="Raider's Boomerang",
+	sets.idle.Town = {main="Skinflayer",sub="Sandung",range="Raider's Boomerang",
 		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Jute Boots +1"}
 
 	sets.idle.Weak = {
 		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body="Emet Harness +1",hands="Plun. Armlets",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
+		body="Emet Harness +1",hands="Plun. Armlets",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Jute Boots +1"}
 
-	sets.ExtraRegen = {head="Ocelomeh Headpiece +1",neck="Lissome Necklace",ring2="Paguroidea Ring"}
+	sets.ExtraRegen = {head="Ocelomeh Headpiece +1",neck="Lissome Necklace",ring2="Defending Ring"}
 
     -- Defense sets
 
 	sets.defense.Evasion = {ammo="Honed Tathlum",
 		head="Alhazen Hat",neck="Erudit. Necklace",
-		body="Emet Harness +1",hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}
 
 	sets.defense.PDT = {ammo="Iron Gobbet",
-		head="Dampening Tam",neck="Twilight Torque",
-		body="Emet Harness +1",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Iximulew Cape",waist="Windbuffet Belt",legs="Iuitl Tights",feet="Rawhide Boots"}
+		head="Herculean Helm",neck="Twilight Torque",
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Iximulew Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}
 
 	sets.defense.MDT = {ammo="Demonry Stone",
-		head="Dampening Tam",neck="Twilight Torque",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Pillager's Armlets +1",ring1="Dark Ring",ring2="Shadow Ring",
-		back="Engulfer Cape",waist="Windbuffet Belt",legs="Ta'lab Trousers",feet="Rawhide Boots"}
+		head="Skormoth Mask",neck="Twilight Torque",
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Pillager's Armlets +1",ring1="Dark Ring",ring2="Defending Ring",
+		back="Engulfer Cape",waist="Windbuffet Belt +1",legs="Ta'lab Trousers",feet="Rawhide Boots"}
 
-	sets.Kiting = {feet="Skadi's Jambeaux +1'"}
+	sets.Kiting = {feet="Jute Boots +1"} --Skadi's Jambeaux +1
 
 
     --------------------------------------
@@ -291,43 +291,43 @@ sets.resting = {head="Uk'uxkaj Cap",neck="Lissome Necklace",
 
     -- Normal melee group
     sets.engaged = {range="Raider's Boomerang",
-		head="Iuitl Headgear",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
 		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skulker's Poulaines"}--Skulker's Bonnet
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Skulker's Poulaines"}--Skulker's Bonnet
     sets.engaged.Acc = {ammo="Honed Tathlum",
 		head="Alhazen Hat",neck="Erudit. Necklace",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Canny Cape",waist="Anguinus Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
+		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Varar Ring",ring2="Varar Ring",
+		back="Canny Cape",waist="Hurch'lan Sash",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Herculean Boots"}
         
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.DD = {ammo="Honed Tathlum",
-		head="Iuitl Headgear",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}--Skulker's Bonnet
+		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}--Skulker's Bonnet
 
     -- Mod set for trivial mobs (Thaumas)--Skulker's Bonnet
     sets.engaged.Mod2 = {ammo="Honed Tathlum",
-		head="Iuitl Headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
+		head="Skormoth Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		back="Canny Cape",waist="Cetl Belt",legs="Herculean Trousers",feet="Herculean Boots"}
 
     sets.engaged.Evasion = {ammo="Honed Tathlum",
 		head="Dampening Tam",neck="Erudit. Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Plun. Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Windbuffet Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skulker's Poulaines"}
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Skulker's Poulaines"}
     sets.engaged.Acc.Evasion = {ammo="Honed Tathlum",
 		head="Alhazen Hat",neck="Erudit. Necklace",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Letalis Mantle",waist="Anguinus Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skulker's Poulaines"}
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Varar Ring",ring2="Varar Ring",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Herculean Trousers",feet="Skulker's Poulaines"}
 
     sets.engaged.PDT = {
-		head="Dampening Tam",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Iximulew Cape",waist="Windbuffet Belt",legs="Iuitl Tights",feet="Rawhide Boots"}
+		head="Herculean Helm",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Iximulew Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}
     sets.engaged.Acc.PDT = {
 		head="Dampening Tam",neck="Twilight Torque",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Dark Ring",ring2="Mars's Ring",
-		back="Canny Cape",waist="Anguinus Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
+		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Dark Ring",ring2="Defending Ring",
+		back="Canny Cape",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Rawhide Boots"}
 
 end
 
