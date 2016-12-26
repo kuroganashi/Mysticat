@@ -116,6 +116,7 @@ Denouements (Hand-to-Hand) [from OMEGA BC 119]
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Cessance Earring
 
+Voltsurge Torque
 
 Pratik Earring (DEF:10 Reward+10 Spirit Link+50 Repair Potency+10%)
 

@@ -60,19 +60,19 @@ function init_gear_sets()
 		body="Azimuth Coat",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Ogapepo Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
 
-	sets.precast.FC.Cure = {main="Tamaxchi",
+	sets.precast.FC.Cure = {main="Tamaxchi",sub="Sors Shield",
 		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		body="Nefer Kalasiris",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Pahtli Cape",waist="Witful Belt",legs="Geo. Pants +1",feet="Regal Pumps +1"}
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {neck="Stoicheion Medal"})
     
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {head="Merlinic Hood",neck="Fotia Gorget",ear1="Brutal Earring",
+	sets.precast.WS = {head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Jhakri Robe +1",hands="Amalric Gages",ring1="Rajas Ring",ring2="Rufescent Ring",
-		back="Lifestream Cape",waist="Fotia Belt",legs="Merlinic Shalwar",feet="Merlinic Crackows"}--Bagua Pants +1/Bagua Tunic +1/Geomancy Galero +1/Bagua Tunic +1
+		body="Jhakri Robe +1",hands="Jhakri Cuffs +1",ring1="Rajas Ring",ring2="Rufescent Ring",
+		back="Lifestream Cape",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}--Bagua Pants +1/Bagua Tunic +1/Geomancy Galero +1/Bagua Tunic +1
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Flash Nova'] = {
@@ -114,7 +114,7 @@ function init_gear_sets()
 		ear1="Gifted Earring",ear2="Magnetic Earring",neck="Incanter's Torque",
 		back="Lifestream Cape",waist="Austerity Belt"}
 
-    sets.midcast.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Sors Shield",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Nodens Gorget",body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix ring",back="Pahtli Cape",legs="Nares Trews",feet="Regal Pumps +1"})
+    sets.midcast.Cure = set_combine(sets.precast.FC, {main="Tamaxchi",sub="Sors Shield",ear1="Mendi. Earring",ear2="Loquacious Earring",body="Nefer Kalasiris",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Prolix ring",back="Pahtli Cape",feet="Regal Pumps +1"})--Nares Trews
     
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -125,6 +125,8 @@ function init_gear_sets()
 	sets.midcast.Shell = sets.midcast.Shellra
 
 	sets.midcast.Stoneskin = set_combine(sets.precast.FC, {main="Solstice",head="Umuthi Hat",waist="Siegel Sash",ear1="Earthcry Earring",legs="Haven Hose",neck="Nodens Gorget"})
+
+	sets.midcast.Cursna = set_combine(sets.precast.FC, {main="Solstice",ring1="Ephedra Ring",ring2="Ephedra Ring",neck="Malison Medallion"})
 	
 	sets.midcast.Regen = set_combine(sets.precast.FC, {main="Bolelabunga",head="Umuthi Hat",body="Telchine Chas."})
 
@@ -138,7 +140,7 @@ function init_gear_sets()
 		body="Count's Garb",hands="Amalric Gages",ring2="Locus Ring",ring1="Mujin Band",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet="Merlinic Crackows"}--Buremte Hat/Azimuth Coat/Lengo Pants/Loagaeth Cuffs/Welkin Crown/Azimuth Coat/Jhakri Robe +1/Witching Robe/Wretched Coat/Count's Garb
 	
-	sets.magic_burst = {neck="Mizukage-no-Kubikazari",ring1="Locus Ring",hands="Amalric Gages"}--Count's Garb
+	sets.magic_burst = {neck="Mizukage-no-Kubikazari",ring2="Locus Ring",ring1="Mujin Band",hands="Amalric Gages"}--Count's Garb
 	
 	sets.midcast['Enfeebling Magic'] = {main="Idris",sub="Culminus",
 		head="Merlinic Hood",neck="Eddy Necklace",ear2="Lifestorm Earring",ear1="Psystorm Earring",
@@ -198,8 +200,8 @@ function init_gear_sets()
 
 	sets.idle.MDT = {main="Bolelabunga",sub="Culminus",range="Dunna",
 		head="Azimuth Hood +1",neck="Twilight Torque",ear1="Handler's Earring +1",ear2="Loquacious Earring",
-		body="Jhakri Robe +1",hands="Bokwus Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",waist="Goading Belt",legs="Assiduity Pants +1",feet="Merlinic Crackows"}	
+		body="Jhakri Robe +1",hands="Telchine Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",waist="Isa Belt",legs="Assiduity Pants +1",feet="Merlinic Crackows"}	
 		
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {main="Idris",sub="Culminus",range="Dunna",
@@ -220,7 +222,7 @@ function init_gear_sets()
 
     sets.idle.Town = {main="Idris",sub="Culminus",range="Dunna",
 		head="Azimuth Hood +1",neck="Lissome Necklace",ear1="Handler's Earring +1",ear2="Handler's Earring",
-		body="Jhakri Robe +1",hands="Bagua Mitaines +1",ring1="Matrimony Ring",ring2="Defending Ring",
+		body="Jhakri Robe +1",hands="Bagua Mitaines +1",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Lifestream Cape",waist="Fucho-No-Obi",legs="Azimuth Tights",feet="Geo. Sandals +1"} --Bolelabunga/Paguroidea Ring
 
     sets.idle.Weak = {main="Bolelabunga",sub="Culminus",range="Dunna",
@@ -231,14 +233,14 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {main="Idris",sub="Culminus",range="Dunna",
-		head="Hagondes Hat",neck="Twilight Torque",ear1="Handler's Earring +1",ear2="Loquacious Earring",
-		body="Jhakri Robe +1",hands="Geo. Mitaines +1",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+		head="Jhakri Coronal +1",neck="Twilight Torque",ear1="Handler's Earring +1",ear2="Loquacious Earring",
+		body="Jhakri Robe +1",hands="Jhakri Cuff +1",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",waist="Isa Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}
 
     sets.defense.MDT = {main="Idris",sub="Culminus",range="Dunna",
 		head="Nahtirah Hat",neck="Twilight Torque",ear1="Handler's Earring +1",ear2="Loquacious Earring",
-		body="Jhakri Robe +1",hands="Bokwus Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
+		body="Jhakri Robe +1",hands="Telchine Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",waist="Isa Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}
 
     sets.Kiting = {feet="Geo. Sandals +1"}
 
@@ -256,14 +258,14 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {main="Idris",range="Dunna",
-		head="Umuthi Hat",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Count's Garb",hands="Geo. Mitaines +1",ring1="Rajas Ring",ring2="K'ayres Ring",
-		back="Umbra Cape",waist="Cetl Belt",legs="Geo. Pants +1",feet="Geo. Sandals +1"}
+		head="Jhakri Coronal +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Count's Garb",hands="Geo. Mitaines +1",ring1="Rajas Ring",ring2="Varar Ring",
+		back="Umbra Cape",waist="Cetl Belt",legs="Geo. Pants +1",feet="Geo. Sandals +1"}--K'ayres Ring
 
 	sets.engaged.Acc = {main="Idris",range="Dunna",
-		head="Alhazen Hat",neck="Subtley Spec.",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-		body="Jhakri Robe +1",hands="Geo. Mitaines +1",ring1="Varar Ring",ring2="Varar Ring",
-		back="Umbra Cape",waist="Cetl Belt",legs="Geo. Pants +1",feet="Geo. Sandals +1"}
+		head="Jhakri Coronal +1",neck="Subtley Spec.",ear1="Steelflash Earring",ear2="Heartseeker Earring",
+		body="Jhakri Robe +1",hands="Jhakri Cuffs +1",ring1="Varar Ring",ring2="Varar Ring",
+		back="Umbra Cape",waist="Cetl Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}
 		
     --------------------------------------
     -- Custom buff sets

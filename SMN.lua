@@ -163,9 +163,9 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {ammo="Impatiens",
-		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Jeweled Collar",
+		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
 		body="Vanir Cotehardie",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps"}
+		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -189,9 +189,9 @@ function init_gear_sets()
     --------------------------------------
 
     sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Jeweled Collar",
+		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
 		body="Vanir Cotehardie",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps"}
+		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
 
     sets.midcast.Cure = {main="Serenity",ammo="Impatiens",
 		head="Nahtirah Hat",ear1="Mendi. Earring",,ear2="Loquacious Earring",

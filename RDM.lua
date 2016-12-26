@@ -61,7 +61,7 @@ function init_gear_sets()
     -- 80% Fast Cast (including trait) for all spells, plus 5% quick cast
     -- No other FC sets necessary.
     sets.precast.FC = {ammo="Impatiens",
-		head="Nahtirah Hat",neck="Jeweled Collar",ear2="Loquacious Earring",ear1="Estq. Earring",
+		head="Nahtirah Hat",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Estq. Earring",
 		body="Duelist's Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots"}
 
@@ -94,12 +94,12 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Nahtirah Hat",neck="Jeweled Collar",ear2="Loquacious Earring",ear1="Estq. Earring",
+		head="Nahtirah Hat",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Estq. Earring",
 		body="Duelist's Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots"}
 
     sets.midcast.Cure = {ammo="Impatiens",
-		head="Gendewitha Caubeen",neck="Jeweled Collar",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		head="Gendewitha Caubeen",neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Pahtli Cape",waist="Chuq'aba Belt",legs="Nares Trews",feet="Chelona Boots"}
         
@@ -107,7 +107,7 @@ function init_gear_sets()
     sets.midcast.CureSelf = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
 
     sets.midcast['Enhancing Magic'] = {ammo="Impatiens",
-		head="Estq. Chappel +2",neck="Jeweled Collar",ear1="Estq. Earring",ear2="Loquacious Earring",
+		head="Estq. Chappel +2",neck="Voltsurge Torque",ear1="Estq. Earring",ear2="Loquacious Earring",
 		body="Estq. Sayon +2",hands="Estq. Ganthrt. +2",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Estoqueur's Cape",waist="Siegel Sash",legs="Estqr. Fuseau +2",feet="Estq. Houseaux +2"}
 

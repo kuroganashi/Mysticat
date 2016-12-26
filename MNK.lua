@@ -61,11 +61,11 @@ function init_gear_sets()
 	sets.precast.JA['Counterstance'] = {feet="Hesychast's Gaiters"}
 
 	sets.precast.JA['Chi Blast'] = {
-		head="Melee Crown +2",neck="Faith Torque",
+		head="Hizamaru Somen +1",neck="Faith Torque",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Hes. Gloves +1",ring1="Levia. Ring",ring2="Rufescent Ring",
 		back="Melee Cape",legs="Samnuha Tights",feet="Rawhide Boots"}
 
-	sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters"}
+	sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters"}--Segomo's Mantle
 
 	sets.precast.JA['Perfect Counter'] = {head="Bhikku Crown"}
 	
@@ -87,16 +87,16 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
-    sets.precast.Step = {head="Alhazen Hat",ear2="Choreia Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
+    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
 	hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Hiza. Haramaki +1",neck="Subtlety Spectacles",ear1="Steelflash Earring"}
     
-	sets.precast.Flourish1 = {head="Dampening Tam",ear2="Choreia Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
+	sets.precast.Flourish1 = {head="Dampening Tam",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
 	hands="Hes. Gloves +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Steelflash Earring"}
 
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Impatiens",head="Herculean Helm",neck="Voltsurge Torque",body="Mirke Wardecors",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+    sets.precast.FC = {ammo="Impatiens",head="Herculean Helm",neck="Voltsurge Torque",body="Taeon Tabard",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",legs="Rawhide Trousers",
 	hands="Leyline Gloves",back="Mujin Mantle"}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -108,9 +108,9 @@ function init_gear_sets()
 		head="Hizamaru Somen +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
 		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Rajas Ring",ring2="Ifrit Ring",
 		back="Buquwik Cape",waist="Fotia Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"}--Anch. Cyclas +1
-    sets.precast.WSAcc = {ammo="Honed Tathlum",body="Anch. Cyclas +1",back="Letalis Mantle",waist="Hurch'lan Sash",head="Dampening Tam"}
+    sets.precast.WSAcc = {ammo="Honed Tathlum",body="Hiza. Haramaki +1",back="Letalis Mantle",waist="Hurch'lan Sash",head="Hizamaru Somen +1"}
     sets.precast.WSMod = {ammo="Tantra Tathlum"}
-    sets.precast.MaxTP = {ear1="Bladeborn Earring",ear2="Steelflash Earring"}
+    sets.precast.MaxTP = {ear1="Brutal Earring",ear2="Moonshade Earring"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
     sets.precast.WS.Mod = set_combine(sets.precast.WS, sets.precast.WSMod)
 
@@ -126,13 +126,13 @@ function init_gear_sets()
         ammo="Tantra Tathlum",ring1="Rajas Ring",back="Buquwik Cape"})
     sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {neck="Fotia Gorget",
 	ear1="Brutal Earring",ear2="Moonshade Earring",waist="Fotia Belt",ring1="Rufescent Ring",ring2="Epona's Ring",
-	back="Buquwik Cape",head="Hizamaru Somen +1",body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"})--Rancorous Mantle/Justiciar's Torque})--neck="Rancor Collar/Rufescent Ring/Ifrit Ring
+	back="Rancorous Mantle",head="Hizamaru Somen +1",body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"})--Rancorous Mantle/Justiciar's Torque})--neck="Rancor Collar/Rufescent Ring/Ifrit Ring
     sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {neck="Fotia Gorget",back="Vespid Mantle",waist="Fotia Belt",ring2="Epona's Ring",ring1="Ramuh Ring",
-	body="Naga Samue",hands="Rawhide Gloves",head="Uk'uxkaj Cap",ammo="Honed Tathlum",legs="Samnuha Tights",feet="Rawhide Boots"})
+	body="Naga Samue",hands="Rawhide Gloves",head="Hizamaru Somen +1",ammo="Honed Tathlum",legs="Samnuha Tights",feet="Rawhide Boots"})
 	--body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}}
     sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS, {})
     sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {ammo="Tantra Tathlum"})
-    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+    sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {ear1="Brutal Earring",ear2="Moonshade Earring"})
 
     sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
     sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
@@ -155,21 +155,21 @@ function init_gear_sets()
 
     sets.precast.WS['Cataclysm'] = {
         head="Dampening Tam",neck="Fotia Gorget",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Taeon Gloves",ring1="Fenrir Ring",ring2="Epona's Ring",
+        body="Samnuha Coat",hands="Leyline Gloves",ring1="Fenrir Ring",ring2="Epona's Ring",
         back="Toro Cape",waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
     
     
     -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Impatiens",
 		head="Herculean Helm",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
-		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",
+		body="Taeon Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",legs="Rawhide Trousers",
 		waist="Black Belt",feet="Rawhide Boots"}
         
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Impatiens",
 		head="Herculean Helm",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Magoraga Beads",
-		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",
-		waist="Black Belt",legs="Herculean Trousers",feet="Rawhide Boots"}
+		body="Taeon Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",
+		waist="Black Belt",legs="Rawhide Trousers",feet="Rawhide Boots"}
 
     
     -- Sets to return to when not performing an action.
@@ -228,7 +228,7 @@ function init_gear_sets()
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
-    sets.ExtraRegen = {head="Ocelomeh Headpiece +1",body="Hiza. Haramaki +1",neck="Lissome Necklace"}
+    sets.ExtraRegen = {head="Ocelomeh Headpiece +1",body="Hiza. Haramaki +1",neck="Lissome Necklace",ear1="Infused Earring"}
 
     -- Engaged sets
 
@@ -317,11 +317,11 @@ function init_gear_sets()
     sets.engaged.Footwork = {ammo="Ginsen",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}
+		back="Bleating Mantle",waist="Windbuffet Belt +1",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}--Segomo's Mantle
     sets.engaged.Footwork.Acc = {ammo="Honed Tathlum",
 		head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
 		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Varar Ring",ring2="Varar Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}--Segomo's Mantle
         
     -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
     sets.impetus_body = {body="Bhikku Cyclas"}

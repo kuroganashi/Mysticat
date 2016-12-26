@@ -140,7 +140,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Impatiens",head="Anwig Salade",neck="Jeweled Collar",
+    sets.precast.FC = {ammo="Impatiens",head="Anwig Salade",neck="Voltsurge Torque",
 	ear2="Loquacious Earring",hands="Leyline Gloves",ear1="Mendi. Earring",
 	ring1="Weatherspoon Ring",ring2="Prolix Ring",body="Mirke Wardecors"}
 
@@ -182,7 +182,7 @@ function init_gear_sets()
     -- Midcast Sets
     
     sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Anwig Salade",neck="Jeweled Collar",ear2="Loquacious Earring",ear1="Mendi. Earring",
+		head="Anwig Salade",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Mendi. Earring",
 		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Mujin Mantle",legs="Iuitl Tights",feet="Rawhide Boots"}
         

@@ -94,7 +94,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {range="Linos",
 		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquac. Earring",
-		hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",neck="Jeweled Collar",
+		hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",neck="Voltsurge Torque",
 		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots"}
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear1="Mendi. Earring",body="Nefer Kalasiris",legs="Nares Trews"})
@@ -217,17 +217,17 @@ function init_gear_sets()
     sets.midcast.Cure = {range="Linos",
 		head="Gendewitha Caubeen",back="Pahtli Cape",waist="Witful Belt",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		legs="Nares Trews",feet="Chelona Boots",neck="Jeweled Collar"}
+		legs="Nares Trews",feet="Chelona Boots",neck="Voltsurge Torque"}
         
     sets.midcast.Curaga = sets.midcast.Cure
         
     sets.midcast.Stoneskin = {range="Linos",
-		head="Nahtirah Hat",neck="Jeweled Collar",ear2="Loquacious Earring",ear1="Earthcry Earring",waist="Siegel Sash",back="Swith Cape",
+		head="Nahtirah Hat",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Earthcry Earring",waist="Siegel Sash",back="Swith Cape",
 		body="Gendewitha Bliaut",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		legs="Haven Hose",feet="Chelona Boots"}
         
     sets.midcast.Cursna = {range="Linos",
-		head="Nahtirah Hat",neck="Malison Medallion",neck="Jeweled Collar",ear2="Loquacious Earring",back="Swith Cape",Waist="Witful Belt",
+		head="Nahtirah Hat",neck="Malison Medallion",neck="Voltsurge Torque",ear2="Loquacious Earring",back="Swith Cape",Waist="Witful Belt",
 		hands="Leyline Gloves",ring1="Ephedra Ring",ring2="Prolix ring",feet="Gende. Galoshes"}
 
     

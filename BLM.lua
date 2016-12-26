@@ -67,14 +67,14 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Nahtirah Hat",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
 		body="Hagondes Coat",hands="Bokwus Gloves",ring1="Titan Ring",ring2="Titan Ring",
-		back="Iximulew Cape",waist="Warwolf Belt",legs="Assiduity Pants +1",feet="Regal Pumps"}
+		back="Iximulew Cape",waist="Warwolf Belt",legs="Assiduity Pants +1",feet="Regal Pumps +1"}
 	
     -- Fast cast sets for spells
 
     sets.precast.FC = {ammo="Impatiens",
-        head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Jeweled Collar",
+        head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
         body="Vanir Cotehardie",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",legs="Lengo Pants",feet="Regal Pumps"}
+		back="Swith Cape",legs="Lengo Pants",feet="Regal Pumps +1"}
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -100,20 +100,20 @@ function init_gear_sets()
 		sets.precast.WS['Myrkr'] = {ammo="Dosis Tathlum",
 		head="Kaabanax Hat",neck="Eddy Necklace",ear1="Gifted Earring",ear2="Loquac. Earring",
 		body="Hagondes Coat",hands="Loagaeth Cuffs",ring1="Fenrir Ring",ring2="Sangoma Ring",
-		back="Bane Cape",waist="Fucho-No-Obi",legs="Nares Trews",feet="Regal Pumps"}
+		back="Bane Cape",waist="Fucho-No-Obi",legs="Nares Trews",feet="Regal Pumps +1"}
 
     
     ---- Midcast Sets ----
 
     sets.midcast.FastRecast = {ammo="Impatiens",
-        head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Jeweled Collar",
+        head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
         body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps"}
+		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
 
     sets.midcast.Cure = {main="Serenity",ammo="Impatiens",
-		head="Nahtirah Hat",neck="Jeweled Collar",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		head="Nahtirah Hat",neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Pahtli Cape",waist="Witful Belt",legs="Nares Trews",feet="Regal Pumps"}
+		back="Pahtli Cape",waist="Witful Belt",legs="Nares Trews",feet="Regal Pumps +1"}
 
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -174,7 +174,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].Proc = {main="Keraunos", sub="Zuuxowu Grip",ammo="Impatiens",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Barkarole Earring",ear2="Loquacious Earring",
         body="Manasa Chasuble",hands="Serpentes Cuffs",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-        back="Swith Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Regal Pumps"}
+        back="Swith Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Regal Pumps +1"}
 
 
     

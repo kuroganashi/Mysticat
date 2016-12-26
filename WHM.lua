@@ -42,7 +42,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Impatiens",
 		head="Nahtirah Hat",neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Ogapepo Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"} --Nahtirah Hat
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash",feet="Regal Pumps +1"})
@@ -53,7 +53,7 @@ function init_gear_sets()
 
     sets.precast.FC.StatusRemoval = sets.precast.FC['Healing Magic']
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",hands="Bokwus Gloves",
+    sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",hands="Fanatic Gloves",
 	body="Nefer Kalasiris",ear2="Glorious Earring",ear1="Mendi. Earring",back="Pahtli Cape",neck="Aceso's Choker +1",feet="Hygieia Clogs +1"}) --body="Heka's Kalasris",ear2="Glorious Earring",feet="Hygieia Clogs +1"
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
@@ -65,7 +65,7 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
 		head="Nahtirah Hat",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
-		body="Ebers Bliaud",hands="Loagaeth Cuffs",ring1="Titan Ring",ring2="Titan Ring",
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
     
     
@@ -76,117 +76,117 @@ function init_gear_sets()
     gear.default.weaponskill_waist = "Fotia Belt"
     sets.precast.WS = {
 		head="Ebers Cap",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Ebers Bliaud",hands="Loagaeth Cuffs",ring1="Rajas Ring",ring2="Rufescent Ring",
-		back="Searing Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Fanatic Gloves
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Rajas Ring",ring2="Rufescent Ring",
+		back="Toro Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Fanatic Gloves
     
-    sets.precast.WS['Flash Nova'] = {ammo="Dosis Tathlum",
+    sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS,  {ammo="Dosis Tathlum",
 		head="Buremte Hat",neck="Eddy Necklace",ear2="Friomisi Earring",ear1="Hecate's Earring",
-		body="Ebers Bliaud",hands="Loagaeth Cuffs",ring1="Fenrir Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"}--Fanatic Gloves
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Fenrir Ring",ring2="Sangoma Ring",
+		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})--Fanatic Gloves
 		
-	sets.precast.WS['Realmrazer'] = {
+	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,   {
 		head="Ebers Cap",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Ebers Bliaud",hands="Loagaeth Cuffs",ring1="Levia. Ring",ring2="Rufescent Ring",
-		back="Searing Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Fanatic Gloves
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Levia. Ring",ring2="Rufescent Ring",
+		back="Toro Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"})--Fanatic Gloves
     
 
     -- Midcast Sets
     
     sets.midcast.FastRecast = {ammo="Impatiens",
 		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Ogapepo Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
     
     -- Cure sets
     gear.default.obi_waist = "Witful Belt"
     gear.default.obi_back = "Mending Cape"
 
-    sets.midcast.CureSolace = {main="Tamaxchi",ammo="Impatiens",
+    sets.midcast.CureSolace = set_combine(sets.precast.FastRecast,   {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",
 		head="Ebers Cap",neck="Aceso's Choker +1",ear2="Glorious Earring",ear1="Mendi. Earring",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"} --body="Heka's Kalasris"/Glorious Earring/Hygieia Clogs +1
+		body="Nefer Kalasiris",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Alaunus's Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"}) --body="Heka's Kalasris"/Glorious Earring/Hygieia Clogs +1/Telchine Gloves
 
-    sets.midcast.Cure = {main="Tamaxchi",ammo="Impatiens",
+    sets.midcast.Cure = set_combine(sets.precast.FastRecast,    {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",
 		head="Ebers Cap",neck="Aceso's Choker +1",ear2="Glorious Earring",ear1="Mendi. Earring",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"}--Hygieia Clogs +1
+		body="Nefer Kalasiris",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"})--Hygieia Clogs +1
 
-    sets.midcast.Curaga = {main="Tamaxchi",ammo="Impatiens",
+    sets.midcast.Curaga = set_combine(sets.precast.FastRecast,    {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",
 		head="Ebers Cap",neck="Aceso's Choker +1",ear2="Glorious Earring",ear1="Mendi. Earring",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"}--Hygieia Clogs +1
+		body="Nefer Kalasiris",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"})--Hygieia Clogs +1
 
-    sets.midcast.CureMelee = {main="Tamaxchi",ammo="Impatiens",
+    sets.midcast.CureMelee = set_combine(sets.precast.FastRecast,    {main="Tamaxchi",sub="Sors Shield",ammo="Impatiens",
 		head="Ebers Cap",neck="Aceso's Choker +1",ear2="Glorious Earring",ear1="Mendi. Earring",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"}--Hygieia Clogs +1
+		body="Nefer Kalasiris",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Pahtli Cape",waist="Witful Belt",legs="Ebers Pantaloons",feet="Hygieia Clogs +1"})--Hygieia Clogs +1
 
-    sets.midcast.Cursna = {main="Beneficus",ammo="Impatiens",
+    sets.midcast.Cursna = set_combine(sets.precast.FastRecast,    {main="Beneficus",ammo="Impatiens",
 		head="Ebers Cap",neck="Malison Medallion",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Prolix Ring",
-		back="Mending Cape",waist="Witful Belt",legs="Theophany Pantaloons",feet="Gendewitha Galoshes"}
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Ephedra Ring",
+		back="Alaunus's Cape",waist="Witful Belt",legs="Theo. Pant. +1",feet="Gendewitha Galoshes"})--Theo. Pant. +1 / 	Theo. Pantaloons
 
-    sets.midcast.StatusRemoval = {ammo="Impatiens",back="Mending Cape",neck="Orison Locket",hands="Gende. Gages +1",feet="Regal Pumps +1",
-		head="Ebers Cap",legs="Ebers Pantaloons",waist="Witful Belt",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring"}
+    sets.midcast.StatusRemoval = set_combine(sets.precast.FastRecast,    {ammo="Impatiens",back="Mending Cape",neck="Voltsurge Torque",hands="Fanatic Gloves",feet="Regal Pumps +1",
+		head="Ebers Cap",legs="Ebers Pantaloons",waist="Witful Belt",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring"})
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
-    sets.midcast['Enhancing Magic'] = {main="Beneficus",ammo="Impatiens",
-		body="Manasa Chasuble",hands="Gende. Gages +1",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",head="Umuthi Hat",
-		back="Ogapepo Cape",waist="Siegel Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"}
+    sets.midcast['Enhancing Magic'] = set_combine(sets.precast.FastRecast,    {main="Beneficus",ammo="Impatiens",neck="Incanter's Torque",
+		body="Manasa Chasuble",hands="Fanatic Gloves",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",head="Umuthi Hat",
+		back="Ogapepo Cape",waist="Siegel Sash",legs="Piety Pantaloons",feet="Ebers Duckbills"})
 
-    sets.midcast.Stoneskin = {ammo="Impatiens",
+    sets.midcast.Stoneskin = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",
 		head="Umuthi Hat",neck="Nodens Gorget",ear2="Loquacious Earring",ear1="Earthcry Earring",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring2="Prolix Ring",
-		back="Ogapepo Cape",waist="Siegel Sash",legs="Haven Hose",feet="Regal Pumps +1"}
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring2="Prolix Ring",
+		back="Ogapepo Cape",waist="Siegel Sash",legs="Haven Hose",feet="Regal Pumps +1"})
 
-    sets.midcast.Auspice = {ammo="Impatiens",hands="Gende. Gages +1",ear1="Mendi. Earring",ear2="Loquacious Earring",feet="Ebers Duckbills",
-	waist="Siegel Sash",ring1="Weatherspoon Ring",ring2="Prolix Ring"}
+    sets.midcast.Auspice = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",hands="Fanatic Gloves",ear1="Mendi. Earring",ear2="Loquacious Earring",feet="Ebers Duckbills",
+	waist="Siegel Sash",ring1="Weatherspoon Ring",ring2="Prolix Ring"})
 
-    sets.midcast.BarElement = {main="Beneficus",ammo="Impatiens",
-		head="Ebers Cap",neck="Colossus's Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
+    sets.midcast.BarElement = set_combine(sets.precast.FastRecast,    {main="Beneficus",ammo="Impatiens",
+		head="Ebers Cap",neck="Incanter's Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Ebers Bliaud",hands="Ebers Mitts",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Ogapepo Cape",waist="Siegel Sash",legs="Ebers Pantaloons",feet="Ebers Duckbills"}
+		back="Ogapepo Cape",waist="Siegel Sash",legs="Ebers Pantaloons",feet="Ebers Duckbills"})
 
-    sets.midcast.Regen = {main="Bolelabunga",ammo="Impatiens",
-		body="Piety Briault",hands="Ebers Mitts",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",head="Umuthi Hat",feet="Regal Pumps +1",
-		legs="Theophany Pantaloons",waist="Witful Belt"}
+    sets.midcast.Regen = set_combine(sets.precast.Cure,    {main="Bolelabunga",ammo="Impatiens",
+		body="Telchine Chas.",hands="Ebers Mitts",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",head="Umuthi Hat",feet="Regal Pumps +1",neck="Incanter's Torque",
+		legs="Theo. Pant. +1",waist="Witful Belt"})
 
-    sets.midcast.Protectra = {ammo="Impatiens",ring1="Sheltered Ring",feet="Piety Duckbills",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",
-	ear2="Loquacious Earring"}
+    sets.midcast.Protectra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",feet="Piety Duckbills",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",neck="Incanter's Torque",
+	ear2="Loquacious Earring"})
 	sets.midcast.Protect = sets.midcast.Protectra
 	
-	sets.midcast.Shellra = {ammo="Impatiens",ring1="Sheltered Ring",legs="Piety Pantaloons",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",
-	ear2="Loquacious Earring"}
+	sets.midcast.Shellra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",legs="Piety Pantaloons",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",neck="Incanter's Torque",
+	ear2="Loquacious Earring"})
 	sets.midcast.Shell = sets.midcast.Shellra
 
-    sets.midcast['Divine Magic'] = {main="Rubicundity",ammo="Kalboron Stone",
+    sets.midcast['Divine Magic'] = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
 		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"}
+		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
 
-    sets.midcast['Dark Magic'] = {main="Rubicundity",ammo="Kalboron Stone",
+    sets.midcast['Dark Magic'] = set_combine(sets.precast.FastRecast,    {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Gende. Galoshes"}
+		body="Ischemia Chasu.",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Gende. Galoshes"})
 
-	sets.midcast.Drain = {main="Rubicundity",ammo="Kalboron Stone",
+	sets.midcast.Drain = set_combine(sets.precast.FastRecast,    {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Appetence Crown",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Fucho-No-Obi",legs="Lengo Pants",feet="Gende. Galoshes"}
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		back="Toro Cape",waist="Fucho-No-Obi",legs="Lengo Pants",feet="Gende. Galoshes"})
 		
 	sets.midcast.Aspir = sets.midcast.Drain
 		
 		
     -- Custom spell classes
-    sets.midcast.MndEnfeebles = {main="Rubicundity",ammo="Kalboron Stone",
+    sets.midcast.MndEnfeebles = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"}
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
 
-	sets.midcast.IntEnfeebles = {main="Rubicundity",ammo="Kalboron Stone",
+	sets.midcast.IntEnfeebles = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
-		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"}
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
     
 	sets.magic_burst = {neck="Mizukage-no-Kubikazari",ring1="Locus Ring",ring2="Mujin Band"}
 	
@@ -229,7 +229,7 @@ function init_gear_sets()
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Bolelabunga",ammo="Homiliary",
+    sets.idle = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Ebers Cap",neck="Lissome Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
 		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
@@ -239,12 +239,12 @@ function init_gear_sets()
 		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Serpentes Sabots"}
 
-    sets.idle.Town = {main="Bolelabunga",sub="Sors Shield",ammo="Homiliary",
+    sets.idle.Town = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Ebers Cap",neck="Lissome Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
 		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
-		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
+		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}--Sors Shield
     
-    sets.idle.Weak = {main="Bolelabunga",ammo="Homiliary",
+    sets.idle.Weak = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Wivre Hairpin",neck="Lissome Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
 		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
@@ -253,12 +253,12 @@ function init_gear_sets()
 
     sets.defense.PDT = {
 		head="Ebers Cap",neck="Twilight Torque",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",legs="Assiduity Pants +1",feet="Gendewitha Galoshes"}
 
     sets.defense.MDT = {
 		head="Nahtirah Hat",neck="Twilight Torque",
-		body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		body="Vanir Cotehardie",hands="Telchine Gloves",ring1="Dark Ring",ring2="Defending Ring",
 		back="Mollusca Mantle",legs="Assiduity Pants +1",feet="Gendewitha Galoshes"}
 
     sets.Kiting = {feet="Herald's Gaiters"}
@@ -276,17 +276,17 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {main="Rubicundity",ammo="Impatiens",
 		head="Umuthi Hat",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring1="Rajas Ring",ring2="K'ayres Ring",
-		back="Umbra Cape",waist="Cetl Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Alhazen Hat
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Rajas Ring",ring2="Varar Ring",
+		back="Umbra Cape",waist="Cetl Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Alhazen Hat K'ayres Ring
 
-	sets.engaged.Acc = {main="Rubicundity",ammo="Impatiens",
-		head="Alhazen Hat",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-		body="Ebers Bliaud",hands="Gende. Gages +1",ring1="Varar Ring",ring2="Varar Ring",
-		back="Umbra Cape",waist="Cetl Belt",legs="Lengo Pants",feet="Medium's Sabots"}
+	sets.engaged.Acc = set_combine(sets.precast.engaged,    {main="Rubicundity",ammo="Impatiens",
+		head="Alhazen Hat",neck="Subtlety Spec.",ear1="Steelflash Earring",ear2="Heartseeker Earring",
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Varar Ring",ring2="Varar Ring",
+		back="Umbra Cape",waist="Cetl Belt",legs="Lengo Pants",feet="Medium's Sabots"})
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Divine Caress'] = {hands="Ebers Mitts",back="Mending Cape"}
-	sets.buff['Sandstorm'] = {feet="Desert Boots"}
+	--sets.buff['Sandstorm'] = {feet="Desert Boots"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

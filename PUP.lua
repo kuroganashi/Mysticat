@@ -67,15 +67,15 @@ function init_gear_sets()
     
     -- Precast Sets
 
-    sets.precast.Step = {head="Alhazen Hat",ear2="Choreia Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
+    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
 	hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Hiza. Haramaki +1",neck="Subtlety Spectacles",ear1="Steelflash Earring"}
     
-	sets.precast.Flourish1 = {head="Hizamaru Somen +1",ear2="Choreia Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
+	sets.precast.Flourish1 = {head="Hizamaru Somen +1",ear2="Cessance Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
 	hands="Hizamaru Kote +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Steelflash Earring"}	
 	
     -- Fast cast sets for spells
     sets.precast.FC = {head="Herculean Helm",body="Taeon Tabard",neck="Voltsurge Torque",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-	ear2="Loquacious Earring",hands="Thaumas Gloves",back="Swith Cape",waist="Witful Belt",
+	ear2="Loquacious Earring",hands="Thaumas Gloves",back="Ogapepo Cape",waist="Witful Belt",
 	legs="Rawhide Trousers",
 	feet="Regal Pumps +1"}
 
