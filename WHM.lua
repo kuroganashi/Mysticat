@@ -42,7 +42,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {ammo="Impatiens",
 		head="Nahtirah Hat",neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Ogapepo Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"} --Nahtirah Hat
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash",feet="Regal Pumps +1"})
@@ -64,7 +64,7 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-		head="Nahtirah Hat",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
+		head="Nahtirah Hat",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",
 		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
     
@@ -76,17 +76,17 @@ function init_gear_sets()
     gear.default.weaponskill_waist = "Fotia Belt"
     sets.precast.WS = {
 		head="Ebers Cap",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Rajas Ring",ring2="Rufescent Ring",
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Petrov Ring",ring2="Rufescent Ring",
 		back="Toro Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Fanatic Gloves
     
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS,  {ammo="Dosis Tathlum",
-		head="Buremte Hat",neck="Eddy Necklace",ear2="Friomisi Earring",ear1="Hecate's Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Fenrir Ring",ring2="Sangoma Ring",
+		head="Buremte Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
+		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Fenrir Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})--Fanatic Gloves
 		
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,   {
 		head="Ebers Cap",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Levia. Ring",ring2="Rufescent Ring",
+		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Levia. Ring",ring2="Rufescent Ring",
 		back="Toro Cape",waist="Fotia Belt",legs="Lengo Pants",feet="Medium's Sabots"})--Fanatic Gloves
     
 
@@ -94,7 +94,7 @@ function init_gear_sets()
     
     sets.midcast.FastRecast = {ammo="Impatiens",
 		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1"}
     
     -- Cure sets
@@ -148,30 +148,30 @@ function init_gear_sets()
 		back="Ogapepo Cape",waist="Siegel Sash",legs="Ebers Pantaloons",feet="Ebers Duckbills"})
 
     sets.midcast.Regen = set_combine(sets.precast.Cure,    {main="Bolelabunga",ammo="Impatiens",
-		body="Telchine Chas.",hands="Ebers Mitts",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",head="Umuthi Hat",feet="Regal Pumps +1",neck="Incanter's Torque",
+		body="Telchine Chas.",hands="Ebers Mitts",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Stikini Ring",ring2="Stikini Ring",head="Umuthi Hat",feet="Regal Pumps +1",neck="Incanter's Torque",
 		legs="Theo. Pant. +1",waist="Witful Belt"})
 
-    sets.midcast.Protectra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",feet="Piety Duckbills",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",neck="Incanter's Torque",
+    sets.midcast.Protectra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",feet="Piety Duckbills",waist="Witful Belt",ring2="Stikini Ring",head="Umuthi Hat",neck="Incanter's Torque",
 	ear2="Loquacious Earring"})
 	sets.midcast.Protect = sets.midcast.Protectra
 	
-	sets.midcast.Shellra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",legs="Piety Pantaloons",waist="Witful Belt",ring2="Prolix Ring",head="Umuthi Hat",neck="Incanter's Torque",
+	sets.midcast.Shellra = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",ring1="Sheltered Ring",legs="Piety Pantaloons",waist="Witful Belt",ring2="Stikini Ring",head="Umuthi Hat",neck="Incanter's Torque",
 	ear2="Loquacious Earring"})
 	sets.midcast.Shell = sets.midcast.Shellra
 
     sets.midcast['Divine Magic'] = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
 
     sets.midcast['Dark Magic'] = set_combine(sets.precast.FastRecast,    {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		body="Ischemia Chasu.",hands="Fanatic Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Gende. Galoshes"})
 
 	sets.midcast.Drain = set_combine(sets.precast.FastRecast,    {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Appetence Crown",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Fucho-No-Obi",legs="Lengo Pants",feet="Gende. Galoshes"})
 		
 	sets.midcast.Aspir = sets.midcast.Drain
@@ -180,12 +180,12 @@ function init_gear_sets()
     -- Custom spell classes
     sets.midcast.MndEnfeebles = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
 
 	sets.midcast.IntEnfeebles = set_combine(sets.precast.FastRecast,   {main="Rubicundity",ammo="Ombre Tathlum +1",
 		head="Nahtirah Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Sangoma Ring",
+		body="Ischemia Chasu.",hands="Telchine Gloves",ring1="Stikini Ring",ring2="Stikini Ring",
 		back="Toro Cape",waist="Refoccilation Stone",legs="Lengo Pants",feet="Medium's Sabots"})
     
 	sets.magic_burst = {neck="Mizukage-no-Kubikazari",ring1="Locus Ring",ring2="Mujin Band"}
@@ -221,6 +221,7 @@ function init_gear_sets()
 	
 	--Glorious Earring (Cure Potency II +2%)
 	
+	--Kaykaus Tights
 	
     -- Resting sets
     sets.resting = {ammo="Homiliary",
@@ -251,12 +252,12 @@ function init_gear_sets()
     
     -- Defense sets
 
-    sets.defense.PDT = {
+    sets.defense.PDT = {ammo="Staunch Tathlum",
 		head="Ebers Cap",neck="Twilight Torque",
 		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Dark Ring",ring2="Defending Ring",
 		back="Umbra Cape",legs="Assiduity Pants +1",feet="Gendewitha Galoshes"}
 
-    sets.defense.MDT = {
+    sets.defense.MDT = {ammo="Staunch Tathlum",
 		head="Nahtirah Hat",neck="Twilight Torque",
 		body="Vanir Cotehardie",hands="Telchine Gloves",ring1="Dark Ring",ring2="Defending Ring",
 		back="Mollusca Mantle",legs="Assiduity Pants +1",feet="Gendewitha Galoshes"}
@@ -276,7 +277,7 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {main="Rubicundity",ammo="Impatiens",
 		head="Umuthi Hat",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Rajas Ring",ring2="Varar Ring",
+		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Petrov Ring",ring2="Varar Ring",
 		back="Umbra Cape",waist="Cetl Belt",legs="Lengo Pants",feet="Medium's Sabots"}--Alhazen Hat K'ayres Ring
 
 	sets.engaged.Acc = set_combine(sets.precast.engaged,    {main="Rubicundity",ammo="Impatiens",

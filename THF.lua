@@ -78,7 +78,7 @@ function init_gear_sets()
 
     sets.buff['Sneak Attack'] = {ammo="Honed Tathlum",
 		head="Meghanada Visor +1",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Ramuh Ring",
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Petrov Ring",ring2="Ramuh Ring",
 		back="Toutatis's Cape",waist="Chaac Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Pursuer's Doublet 
 
     sets.buff['Trick Attack'] = {ammo="Honed Tathlum",
@@ -112,24 +112,26 @@ function init_gear_sets()
 
 	sets.precast.JA['Sneak Attack'] = {ammo="Honed Tathlum",
 		head="Meghanada Visor +1",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Ramuh Ring",
+		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Petrov Ring",ring2="Ramuh Ring",
 		back="Toutatis's Cape",waist="Chaac Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
 
 	sets.precast.JA['Trick Attack'] = {ammo="Honed Tathlum",
 		head="Meghanada Visor +1",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Plun. Armlets",ring1="Garuda Ring",ring2="Garuda Ring",
 		back="Toutatis's Cape",waist="Chaac Belt",legs="Samnuha Tights",feet="Skulker's Poulaines"}--Skulker's Bonnet,Pursuer's Doublet 
-
+	
+	sets.precast.JA['Provoke'] = sets.enmity
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Sonia's Plectrum",
-		head="Khepri Bonnet",neck="Tjukurrpa Medal",ear1="Soil Pearl",ear2="Soil Pearl",
+		head="Khepri Bonnet",neck="Unmoving Collar +1",ear1="Soil Pearl",ear2="Soil Pearl",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"} --head="Lilitu Headpiece",Pursuer's Doublet 
 
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 
+	
 	-- Fast cast sets for spells
 
 	sets.precast.FC = {ammo="Impatiens",
@@ -142,13 +144,15 @@ function init_gear_sets()
     -- Ranged snapshot gear
 	sets.precast.RangedAttack = {head="Meghanada Visor +1",ear2="Clearview Earring",ear1="Volley Earring",neck="Erudit. Necklace",back="Libeccio Mantle",body="Meg. Cuirie +1",hands="Meg. Gloves +1",ring1="Hajduk Ring",ring2="Hajduk Ring",legs="Meg. Chausses +1",feet="Meg. Jam. +1"}--Dampening Tam
 
+	--Enmity
+	sets.enmity = {ear1="Friomisi Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring"}
 
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Yetshila",
 	head="Meghanada Visor +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Meg. Cuirie +1",hands="Meg. Gloves +1",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Meg. Cuirie +1",hands="Meg. Gloves +1",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Toutatis's Cape",waist="Fotia Belt",legs="Samnuha Tights",feet="Meg. Jam. +1"}--Pursuer's Doublet Dampening Tam
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum",head="Dampening Tam",back="Letalis Mantle"})
 
@@ -174,8 +178,8 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
 
-	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Meghanada Visor +1",neck="Fotia Gorget",hands="Meg. Gloves +1",ammo="Yetshila",
-	ring2="Ramuh Ring",ring1="Begrudging Ring",back="Toutatis's Cape",body="Meg. Cuirie +1",legs="Samnuha Tights",waist="Fotia Belt",feet="Meg. Jam. +1"})--Uk'uxkaj Cap Ishvara Earring Lustratio Subligar
+	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Adhemar Bonnet",neck="Fotia Gorget",hands="Meg. Gloves +1",ammo="Yetshila",
+	ring2="Ramuh Ring",ring1="Begrudging Ring",back="Toutatis's Cape",body="Meg. Cuirie +1",legs="Lustratio Subligar",waist="Fotia Belt",feet="Meg. Jam. +1"})--Uk'uxkaj Cap Ishvara Earring Lustratio Subligar
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {back="Letalis Mantle"})
 	sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {waist="Fotia Belt"})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
@@ -197,8 +201,8 @@ function init_gear_sets()
 	sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
 
 	sets.precast.WS['Aeolian Edge'] = {
-		head="Dampening Tam",neck="Stoicheion Medal",ear2="Friomisi Earring",ear1="Hecate's Earring",
-		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Fenrir Ring",
+		head="Dampening Tam",neck="Stoicheion Medal",ear1="Friomisi Earring",ear2="Hecate's Earring",
+		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Fenrir Ring",
 		back="Toro Cape",waist="Fotia Belt",legs="Meg. Chausses +1",feet="Meg. Jam. +1"}
 
 
@@ -270,15 +274,15 @@ sets.resting = {head="Meghanada Visor +1",neck="Lissome Necklace",
 
 	sets.defense.Evasion = {ammo="Honed Tathlum",
 		head="Alhazen Hat",neck="Erudit. Necklace",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Canny Cape",waist="Nusku's Sash",legs="Herculean Trousers",feet="Herculean Boots"}--Meghanada Visor +1
 
-	sets.defense.PDT = {ammo="Honed Tathlum",
+	sets.defense.PDT = {ammo="Staunch Tathlum",
 		head="Herculean Helm",neck="Twilight Torque",
 		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
 		back="Iximulew Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}
 
-	sets.defense.MDT = {ammo="Honed Tathlum",
+	sets.defense.MDT = {ammo="Staunch Tathlum",
 		head="Skormoth Mask",neck="Twilight Torque",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Pillager's Armlets +1",ring1="Dark Ring",ring2="Defending Ring",
 		back="Engulfer Cape",waist="Windbuffet Belt +1",legs="Ta'lab Trousers",feet="Rawhide Boots"}
@@ -293,7 +297,7 @@ sets.resting = {head="Meghanada Visor +1",neck="Lissome Necklace",
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
 		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Plun. Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Plun. Armlets",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Skulker's Poulaines"}--Skulker's Bonnet
     sets.engaged.Acc = {ammo="Honed Tathlum",
 		head="Meghanada Visor +1",neck="Subtlety Spec.",ear1="Steelflash Earring",ear2="Heartseeker Earring",
@@ -303,18 +307,18 @@ sets.resting = {head="Meghanada Visor +1",neck="Lissome Necklace",
     -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.DD = {ammo="Honed Tathlum",
 		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Brutal Earring",ear2="Suppanomimi",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Canny Cape",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}--Skulker's Bonnet
 
     -- Mod set for trivial mobs (Thaumas)--Skulker's Bonnet
     sets.engaged.Mod2 = {ammo="Honed Tathlum",
 		head="Skormoth Mask",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Floral Gauntlets",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Floral Gauntlets",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Canny Cape",waist="Cetl Belt",legs="Herculean Trousers",feet="Herculean Boots"}
 
     sets.engaged.Evasion = {ammo="Honed Tathlum",
 		head="Dampening Tam",neck="Erudit. Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Emet Harness +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Canny Cape",waist="Nusku's Sash",legs="Herculean Trousers",feet="Skulker's Poulaines"}
     sets.engaged.Acc.Evasion = {ammo="Honed Tathlum",
 		head="Meghanada Visor +1",neck="Erudit. Necklace",ear1="Steelflash Earring",ear2="Heartseeker Earring",

@@ -73,6 +73,7 @@ function init_gear_sets()
 	sets.precast.Flourish1 = {head="Hizamaru Somen +1",ear2="Cessance Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
 	hands="Hizamaru Kote +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Steelflash Earring"}	
 	
+	
     -- Fast cast sets for spells
     sets.precast.FC = {head="Herculean Helm",body="Taeon Tabard",neck="Voltsurge Torque",ring1="Weatherspoon Ring",ring2="Prolix Ring",
 	ear2="Loquacious Earring",hands="Thaumas Gloves",back="Ogapepo Cape",waist="Witful Belt",
@@ -88,11 +89,11 @@ function init_gear_sets()
 
     sets.precast.JA.Maneuver = {neck="Buffoon's Collar +1",body="Karagoz Farsetto",hands="Foire Dastanas +1",back="Visucius's Mantle",ear2="Domes. Earring"}
 
-
+	sets.precast.JA['Provoke'] = sets.enmity
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-		head="Herculean Helm",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
+		head="Herculean Helm",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
         
@@ -109,19 +110,20 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-		head="Herculean Helm",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
+		head="Herculean Helm",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
-       
+    sets.enmity = {ear1="Friomisi Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring"}
+  
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
 		head="Hizamaru Somen +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Fotia Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -254,7 +256,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}--Karagoz Guanti/Karagoz Capello/Hurch'lan Sash/Clotharius Torque/Dispersal Mantle
     sets.engaged.Acc = {ammo="Automat. Oil +3",
 		head="Hizamaru Somen +1",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
@@ -262,11 +264,11 @@ function init_gear_sets()
 		back="Visucius's Mantle",waist="Klouskap Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
 	sets.engaged.Martial_Arts = {ammo="Automat. Oil +3",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Klouskap Sash",legs="Karagoz Pantaloni",feet="Herculean Boots"}
 	sets.engaged.Hizamaru = {ammo="Automat. Oil +3",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Klouskap Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
 	sets.engaged.DT = {ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
@@ -295,17 +297,17 @@ function init_gear_sets()
 
     sets.engaged.PetEngaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
 
 	sets.engaged.PetEngaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
 	
     sets.engaged.PetEngaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
+		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
 		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
 	
 end
