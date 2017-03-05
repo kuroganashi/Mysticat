@@ -215,7 +215,7 @@ function init_gear_sets()
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {head="Despair Helm"})
 	sets.midcast.Pet.HighAcc = set_combine(sets.midcast.Pet.WS, {hands="Emicho Gauntlets"})
 	sets.midcast.Pet.MaxAcc = set_combine(sets.midcast.Pet.WS, {hands="Valorous Mitts"})
-	sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {neck="Empath Necklace"})
+	sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {neck="Empath Necklace",back="Argochampsa Mantle"})
 	 
 	sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas"} 
     sets.midcast.Pet.Favorable = {head="Nukumi Cabasset",legs="Totemic Trousers"}--Nukumi Cabasset

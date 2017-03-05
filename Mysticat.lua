@@ -120,10 +120,10 @@ Voltsurge Torque
 
 Pratik Earring (DEF:10 Reward+10 Spirit Link+50 Repair Potency+10%)
 
+Stikini Ring (MND+5 M.ACC+8 ALL MAGIC SKILL +5)
 
 
-
-
+back="Argochampsa Mantle" =  (DEF:13 ATK+12 MAB+12   PET: ATK+12 Rng.ATK+12 MAB+12) ALL JOBS
 
 
 

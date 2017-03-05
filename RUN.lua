@@ -232,10 +232,10 @@ function init_gear_sets()
 	--Runeist Bottes +1
 	
     sets.idle = {ammo="Homiliary",
-	head="Rawhide Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",body="Futhark Coat",hands="Herculean Gloves",ring1="Matrimony Band",ring2="Defending Ring",back="Evasionist's Cape",waist="Fucho-No-Obi",legs="Rawhide Trousers",feet="Skadi's Jambeaux +1"}--Paguroidea Ring
+	head="Rawhide Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",body="Futhark Coat",hands="Herculean Gloves",ring1="Matrimony Band",ring2="Defending Ring",back="Evasionist's Cape",waist="Fucho-No-Obi",legs="Carmine Cuisses +1",feet="Herculean Boots"}--Paguroidea Ring
     
 	sets.idle.Town = {main="Montante +1",sub="Duplus Grip",ammo="Homiliary",
-	head="Rawhide Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",body="Futhark Coat",hands="Herculean Gloves",ring1="Matrimony Band",ring2="Defending Ring",back="Evasionist's Cape",waist="Fucho-No-Obi",legs="Rawhide Trousers",feet="Skadi's Jambeaux +1"}
+	head="Rawhide Mask",neck="Lissome Necklace",ear1="Brutal Earring",ear2="Cessance Earring",body="Futhark Coat",hands="Herculean Gloves",ring1="Matrimony Band",ring2="Defending Ring",back="Evasionist's Cape",waist="Fucho-No-Obi",legs="Carmine Cuisses +1",feet="Herculean Boots"}--Carmine Cuisses +1
 	
 	sets.idle.Refresh = set_combine(sets.idle, {body="Runeist Coat +1"})
 	
@@ -258,15 +258,15 @@ function init_gear_sets()
 	--Evasionist's Cape		(DT-5% / PDT-8%)
 	--Staunch Tathlum		(DT-2%)
 	
-	sets.defense.PDT = {ammo="Staunch Tathlum",head="Meghanada Visor +1",body="Meg. Cuirie +1",hands="Meg. Gloves +1",legs="Erilaz Leg Guards",feet="Erilaz Greaves",ring1="Dark Ring",ring2="Defending Ring",waist="Flume Belt",neck="Twilight Torque",back="Evasionist's Cape"}--PDT-58% DT-33%
+	sets.defense.PDT = {ammo="Staunch Tathlum",head="Meghanada Visor +1",body="Ayanmo Corazza +1",hands="Aya. Manopolas +1",legs="Erilaz Leg Guards",feet="Erilaz Greaves",ring1="Dark Ring",ring2="Defending Ring",waist="Flume Belt",neck="Twilight Torque",back="Evasionist's Cape"}--PDT-55% DT-33%
 
-	sets.defense.MDT =  set_combine(sets.defense.PDT,  {ammo="Staunch Tathlum",ring1="Dark Ring",ring2="Defending Ring",waist="Engraved Belt",neck="Twilight Torque",ear2="Hearty Earring",head="Dampening Tam",body="Futhark Coat"})--DT-33% MDT-37%
+	sets.defense.MDT =  set_combine(sets.defense.PDT,  {ammo="Staunch Tathlum",ring1="Dark Ring",ring2="Defending Ring",waist="Engraved Belt",neck="Twilight Torque",ear2="Hearty Earring",head="Dampening Tam",body="Ayanmo Corazza +1",hands="Aya. Manopolas +1",legs="Aya. Cosciales +1",feet="Aya. Gambieras +1"})--DT-40% MDT-37%
 
 	sets.defense.Resist = set_combine(sets.defense.PDT, {ammo="Staunch Tathlum",waist="Engraved Belt",neck="Warder's Charm +1",hands="Erilaz Gauntlets",legs="Rune. Trousers +1",feet="Erilaz Greaves",ear2="Hearty Earring"})
 	
 	sets.defense.MP_Back = set_combine(sets.defense.PDT, {body="Erilaz Surcoat"})
 	
-	sets.Kiting = {feet="Skadi's Jambeaux +1"}
+	sets.Kiting = {legs="Carmine Cuisses +1"}--Skadi's Jambeaux +1
 
 	sets.latent_refresh = {waist="Fucho-No-Obi"}
 

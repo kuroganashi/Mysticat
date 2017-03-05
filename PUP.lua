@@ -209,7 +209,7 @@ function init_gear_sets()
 
     sets.idle.Pet.Engaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
 	legs="Karagoz Pantaloni",feet="Naga Kyahan",hands="Naga Tekko",
-	ear2="Domes. Earring",ear1="Cirque Earring",back="Visucius's Mantle",
+	ear2="Domes. Earring",ear1="Cirque Earring",back="Argochampsa Mantle",
 	waist="Klouskap Sash"})
 
 	sets.idle.Pet.Engaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
@@ -218,7 +218,7 @@ function init_gear_sets()
 	
     sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
 	legs="Karagoz Pantaloni",feet="Naga Kyahan",hands="Naga Tekko",
-	ear2="Domes. Earring",ear1="Cirque Earring",back="Visucius's Mantle",
+	ear2="Domes. Earring",ear1="Cirque Earring",back="Argochampsa Mantle",
 	waist="Klouskap Sash"})
 
 
