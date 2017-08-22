@@ -15,11 +15,11 @@
     The FullLength state will simply equip the bonus song instrument on top of standard gear.
     
     
-    Simple macro to cast a dummy Terpander song:
+    Simple macro to cast a dummy Daurdabla song:
     /console gs c set ExtraSongsMode Dummy
     /ma "Shining Fantasia" <me>
     
-    To use a Terpander rather than Terpander, set the info.ExtraSongInstrument variable to
+    To use a Terpander rather than Daurdabla, set the info.ExtraSongInstrument variable to
     'Terpander', and info.ExtraSongs to 1.
 --]]
 
@@ -56,10 +56,11 @@ function user_setup()
     pick_tp_weapon()
     
     -- Adjust this if using the Terpander (new +song instrument)
-    info.ExtraSongInstrument = 'Terpander'
-    -- How many extra songs we can keep from Terpander/Terpander
+    --info.ExtraSongInstrument = 'Daurdabla'
+	info.ExtraSongInstrument = 'Terpander'
+    -- How many extra songs we can keep from Daurdabla/Terpander
     info.ExtraSongs = 1
-    
+
     -- Set this to false if you don't want to use custom timers.
     state.UseCustomTimers = M(true, 'Use Custom Timers')
     
@@ -86,18 +87,13 @@ function init_gear_sets()
     
     -- Precast Sets
 
-	sets.precast.Waltz = {
-		head="Nahtirah Hat",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
-		body="Gendewitha Briault",hands="Bokwus Gloves",ring1="Titan Ring",ring2="Titan Ring",
-		back="Iximulew Cape",waist="Warwolf Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
-	
     -- Fast cast sets for spells
     sets.precast.FC = {range="Linos",
-		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquac. Earring",
-		hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",neck="Voltsurge Torque",
-		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots"}
+		head="Nahtirah Hat",ear2="Loquac. Earring",
+		hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Kishar Ring",neck="Voltsurge Torque",
+		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Chelona Boots +1"}
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear1="Mendi. Earring",body="Nefer Kalasiris",legs="Nares Trews"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {body="Heka's Kalasiris",legs="Nares Trews"})
 
     sets.precast.FC.Stoneskin = set_combine(sets.precast.FC, {head="Umuthi Hat",waist="Siegel Sash"})
 
@@ -105,175 +101,172 @@ function init_gear_sets()
 
     sets.precast.FC.BardSong = {main="Felibre's Dague",range="Linos",
 		head="Aoidos' Calot +2",neck="Aoidos' Matinee",ear1="Aoidos' Earring",ear2="Loquac. Earring",
-		body="Sha'ir Manteel",hands="Schellenband",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",waist="Aoidos' Belt",legs="Gendewitha Spats",feet="Bokwus Boots"}
+		body="Sha'ir Manteel",hands="Schellenband",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		back="Swith Cape",waist="Aoidos' Belt",legs="Gende. Spats +1",feet="Bokwus Boots"}
 
+    --sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
+    
 	sets.precast.FC.Terpander = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
-        
     
     -- Precast sets to enhance JAs
     
-	sets.precast.JA.Nightingale = {feet="Bihu Slippers"}
-	sets.precast.JA.Troubadour = {body="Bard's Justaucorps +1"}
-	sets.precast.JA['Soul Voice'] = {legs="Bard's Cannions +1"}
+    sets.precast.JA.Nightingale = {feet="Bihu Slippers"}
+    sets.precast.JA.Troubadour = {body="Bihu Justaucorps"}
+    sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {range="Linos",
-		head="Nahtirah Hat",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
-		body="Gendewitha Briault",hands="Bokwus Gloves",ring1="Titan Ring",ring2="Titan Ring",
-		back="Iximulew Cape",waist="Warwolf Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+		head="Nahtirah Hat",
+		body="Gende. Bilaut +1",hands="Buremte Gloves",
+		back="Refraction Cape",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
     
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {range="Linos",
-		head="Buremte Hat",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Brioso Justaucorps",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Atheling Mantle",waist="Caudata Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-   sets.precast.WS['Evisceration'] = {range="Linos",
-		head="Buremte Hat",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="Ramuh Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+    sets.precast.WS['Evisceration'] = {range="Linos",
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Brioso Justaucorps",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Atheling Mantle",waist="Caudata Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 
-	sets.precast.WS["Rudra's Storm"] = {range="Linos",
-		head="Buremte Hat",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="Ramuh Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}	
-		
 	sets.precast.WS['Exenterator'] = {range="Linos",
-		head="Buremte Hat",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring1="Garuda Ring",ring2="Garuda Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Brioso Justaucorps",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Atheling Mantle",waist="Caudata Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 
 	sets.precast.WS['Mordant Rime'] = {range="Linos",
-		head="Buremte Hat",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
- 
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Brioso Justaucorps",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Atheling Mantle",waist="Caudata Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
+    
     
     -- Midcast Sets
 
     -- General set for recast times.
     sets.midcast.FastRecast = {range="Linos",
-		head="Nahtirah Hat",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Vanir Cotehardie",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Swith Cape",waist="Witful Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+		head="Nahtirah Hat",ear2="Loquacious Earring",
+		body="Vrikodara Jupon",hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		back="Swith Cape",waist="Witful Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
         
     -- Gear to enhance certain classes of songs.  No instruments added here since Gjallarhorn is being used.
     sets.midcast.Ballad = {main="Legato Dagger",range="Linos",legs="Aoidos' Rhing. +2"}
-	sets.midcast.Lullaby = {main="Malevolence",range="Linos",hands="Brioso Cuffs"}
+	sets.midcast.Lullaby = {main="Felibre's Dague",range="Linos",hands="Brioso Cuffs"}
 	sets.midcast.Madrigal = {main="Legato Dagger",range="Linos",head="Aoidos' Calot +2"}
 	sets.midcast.March = {main="Legato Dagger",range="Linos",hands="Aoidos' Manchettes +2"}
 	sets.midcast.Minuet = {main="Legato Dagger",range="Linos",body="Aoidos' Hongreline +2"}
 	sets.midcast.Minne = {main="Legato Dagger",range="Linos"}
 	sets.midcast.Paeon = {main="Legato Dagger",range="Linos",head="Brioso Roundlet"}
 	sets.midcast.Carol = {main="Felibre's Dague",range="Terpander",
-		head="Aoidos' Calot +2",ear2="Loaquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		body="Sha'ir Manteel",hands="Leyline Gloves",waist="Aoidos' Belt",
-		legs="Gendewitha Spats",feet="Bokwus Boots",neck="Aoidos' Matinee"}
+		head="Aoidos' Calot +2",ear2="Loaquacious Earring",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		body="Sha'ir Manteel",hands="Aoidos' Manchettes +2",waist="Aoidos' Belt",
+		legs="Aoidos' Rhing. +2",feet="Aoidos' Cothrn. +2",neck="Aoidos' Matinee"}
 	sets.midcast["Sentinel's Scherzo"] = {main="Legato Dagger",range="Linos",feet="Aoidos' Cothrn. +2"}
-	sets.midcast['Magic Finale'] = {main="Malevolence",range="Linos",legs="Aoidos' Rhing. +2"}
+	sets.midcast['Magic Finale'] = {main="Felibre's Dague",range="Linos",neck="Wind Torque",waist="Corvax Sash",legs="Aoidos' Rhing. +2"}
 
-	sets.midcast.Mazurka = {main="Felibre's Dague",range="Terpander"}
-
+	--sets.midcast.Mazurka = {range="Terpander"}
+    sets.midcast.Mazurka = {range="Terpander"}
+    
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEffect = {main="Legato Dagger",range="Linos",
 		head="Aoidos' Calot +2",neck="Aoidos' Matinee",ear2="Loquacious Earring",
-		body="Aoidos' Hongreline +2",hands="Aoidos' Manchettes +2",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		body="Aoidos' Hongreline +2",hands="Aoidos' Manchettes +2",ring1="Weatherspoon Ring",ring2="Kishar Ring",
 		back="Rhapsode's Cape",waist="Aoidos' Belt",legs="Aoidos' Rhing. +2",feet="Brioso Slippers"}
 
     -- For song defbuffs (duration primary, accuracy secondary)
-    sets.midcast.SongDebuff = {main="Malevolence",range="Linos",
-		head="Buremte Hat",neck="Eddy Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring2="Prolix Ring",ring1="Weatherspoon Ring",
-		back="Rhapsode's Cape",waist="Refoccilation Stone",legs="Aoidos' Rhing. +2",feet="Bokwus Boots"}
+    sets.midcast.SongDebuff = {main="Felibre's Dague",range="Linos",
+		head="Nahtirah Hat",neck="Aoidos' Matinee",ear2="Gwati Earring",ear1="Digni. Earring",
+		body="Brioso Justaucorps",hands="Aoidos' Manchettes +2",ring2="Kishar Ring",ring1="Fenrir Ring +1",
+		back="Rhapsode's Cape",waist="Aoidos' Belt",legs="Gende. Spats +1",feet="Brioso Slippers"}
 
     -- For song defbuffs (accuracy primary, duration secondary)
-    sets.midcast.ResistantSongDebuff = {main="Malevolence",range="Linos",
-		head="Buremte Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Brioso Justaucorps",hands="Leyline Gloves",ring2="Prolix Ring",ring1="Weatherspoon Ring",
-		back="Rhapsode's Cape",waist="Refoccilation Stone",legs="Aoidos' Rhing. +2",feet="Bokwus Boots"}
+    sets.midcast.ResistantSongDebuff = {main="Felibre's Dague",range="Linos",
+		head="Nahtirah Hat",neck="Aoidos' Matinee",ear1="Digni. Earring",ear2="Gwati Earring",
+		body="Brioso Justaucorps",hands="Aoidos' Manchettes +2",ring2="Kishar Ring",ring1="Fenrir Ring +1",
+		back="Rhapsode's Cape",waist="Aoidos' Belt",legs="Aoidos' Rhing. +2",feet="Bokwus Boots"}
 
     -- Song-specific recast reduction
-    sets.midcast.SongRecast = {ear2="Loquacious Earring",
-		body="Sha'ir Manteel",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+    sets.midcast.SongRecast = {range="Linos",
+		ear2="Loquacious Earring",
+		body="Sha'ir Manteel",ring1="Weatherspoon Ring",ring2="Kishar Ring",
 		back="Rhapsode's Cape",waist="Aoidos' Belt",legs="Aoidos' Rhing. +2"}
 
-    sets.midcast.Terpander = set_combine(sets.midcast.FastRecast, sets.midcast.SongRecast, {range=info.ExtraSongInstrument})
+    --sets.midcast.Daurdabla = set_combine(sets.midcast.FastRecast, sets.midcast.SongRecast, {range=info.ExtraSongInstrument})
 
-    -- Cast spell with normal gear, except using Terpander instead
-    sets.midcast.Terpander = {range=info.ExtraSongInstrument}
-
-    -- Dummy song with Terpander; minimize duration to make it easy to overwrite.
-    sets.midcast.TerpanderDummy = {main="Felibre's Dague",range="Terpander",
-		head="Aoidos' Calot +2",neck="Aoidos' Matinee",ear1="Lifestorm Earring",ear2="Loaquacious Earring",
-		body="Sha'ir Manteel",hands="Leyline Gloves",ring2="Prolix Ring",ring1="Weatherspoon Ring",
-		back="Swith Cape",waist="Aoidos' Belt",legs="Gendewitha Spats",feet="Bokwus Boots"}
+    -- Cast spell with normal gear, except using Daurdabla instead
+    --sets.midcast.Daurdabla = {range=info.ExtraSongInstrument}
+	sets.midcast.Terpander = {range=info.ExtraSongInstrument}
+	
+    -- Dummy song with Daurdabla; minimize duration to make it easy to overwrite.
+    sets.midcast.TerpanderDummy = {main="Felibre's Dague",range=info.ExtraSongInstrument,
+       head="Nahtirah Hat",neck="Aoidos' Matinee",ear1="Digni. Earring",ear2="Gwati Earring",
+		body="Sha'ir Manteel",hands="Aoidos' Manchettes +2",ring2="Kishar Ring",ring1="Weatherspoon Ring",
+		back="Swith Cape",waist="Aoidos' Belt",legs="Gende. Spats +1",feet="Bokwus Boots"}
 
     -- Other general spells and classes.
     sets.midcast.Cure = {range="Linos",
-		head="Gendewitha Caubeen",back="Pahtli Cape",waist="Witful Belt",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Nefer Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		legs="Nares Trews",feet="Chelona Boots",neck="Voltsurge Torque"}
+		head="Gende. Caubeen +1",back="Pahtli Cape",waist="Witful Belt",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		body="Heka's Kalasiris",hands="Bokwus Gloves",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		legs="Nares Trews",feet="Chelona Boots +1",neck="Voltsurge Torque"}
         
     sets.midcast.Curaga = sets.midcast.Cure
         
     sets.midcast.Stoneskin = {range="Linos",
 		head="Nahtirah Hat",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Earthcry Earring",waist="Siegel Sash",back="Swith Cape",
-		body="Gendewitha Bliaut",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		legs="Haven Hose",feet="Chelona Boots"}
-        
-    sets.midcast.Cursna = {range="Linos",
-		head="Nahtirah Hat",neck="Malison Medallion",neck="Voltsurge Torque",ear2="Loquacious Earring",back="Swith Cape",Waist="Witful Belt",
-		hands="Leyline Gloves",ring1="Ephedra Ring",ring2="Prolix ring",feet="Gende. Galoshes"}
+		body="Gende. Bilaut +1",hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		legs="Haven Hose",feet="Chelona Boots +1"}
 
+	sets.midcast.Cursna = {range="Linos",
+		head="Nahtirah Hat",neck="Malison Medallion",ear2="Loquacious Earring",back="Swith Cape",waist="Witful Belt",
+		hands="Gende. Gages +1",ring1="Weatherspoon Ring",ring2="Kishar Ring",feet="Gende. Galoshes"}
     
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {main="Legato Dagger", sub="Legion Scutum",range="Linos", 
-		body="Gendewitha Bliaut",head="Nahtirah Hat",neck="Lissome Necklace",ring1="Matrimony Band",ring2="Prolix Ring",
+    sets.resting = {main="Taming Sari", sub="Legion Scutum",range="Linos", 
+		body="Gende. Bilaut +1",head="Befouled Crown",neck="Arciela's Grace +1",ring1="Dark Ring",ring2="Defending Ring",
 		hands="Serpentes Cuffs",legs="Assiduity Pants +1",feet="Serpentes Sabots",waist="Fucho-No-Obi"}
     
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {main="Legato Dagger", sub="Legion Scutum",range="Linos",
-		head="Nahtirah Hat",neck="Lissome Necklace",ear1="Aoidos' Earring",ear2="Loquacious Earring",
-		body="Gendewitha Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Prolix Ring",
-		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
+   sets.idle = {main="Taming Sari", sub="Legion Scutum",range="Linos",
+		head="Befouled Crown",neck="Arciela's Grace +1",ear1="Aoidos' Earring",ear2="Loquacious Earring",
+		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Swith Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
+
+	sets.idle.Town = {main="Taming Sari", sub="Legion Scutum",range="Linos",
+		head="Befouled Crown",neck="Arciela's Grace +1",ear1="Aoidos' Earring",ear2="Loquacious Earring",
+		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Swith Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
+
+	sets.idle.Weak = {main="Taming Sari", sub="Legion Scutum",range="Linos",
+		head="Befouled Crown",neck="Arciela's Grace +1",ear1="Aoidos' Earring",ear2="Loquacious Earring",
+		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
+		back="Swith Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
 
     sets.idle.PDT = {main=gear.Staff.PDT, sub="Mephitis Grip",range="Oneiros Harp",
-        head="Gendewitha Caubeen",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        head="Gendewitha Caubeen",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
         body="Gendewitha Bliaut",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Sangoma Ring",
-        back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats",feet="Aoidos' Cothurnes +2"}
+        back="Umbra Cape",waist="Flume Belt +1",legs="Gendewitha Spats",feet="Aoidos' Cothurnes +2"}
 
-    sets.idle.Town = {main="Legato Dagger", sub="Legion Scutum",range="Linos",
-		head="Nahtirah Hat",neck="Lissome Necklace",ear1="Aoidos' Earring",ear2="Loquacious Earring",
-		body="Gendewitha Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Prolix Ring",
-		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
-    
-    sets.idle.Weak = {main="Legato Dagger", sub="Legion Scutum",range="Linos",
-		head="Nahtirah Hat",neck="Lissome Necklace",ear1="Aoidos' Earring",ear2="Loquacious Earring",
-		body="Gendewitha Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Prolix Ring",
-		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
-    
-    
     -- Defense sets
 
-    sets.defense.PDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
-        head="Gendewitha Caubeen",neck="Twilight Torque",
-        body="Gendewitha Bliaut",hands="Gendewitha Gages",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Umbra Cape",waist="Flume Belt",legs="Gendewitha Spats",feet="Gendewitha Galoshes"}
+   sets.defense.PDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
+		head="Gende. Caubeen +1",neck="Twilight Torque",
+		body="Gende. Bilaut +1",hands="Gende. Gages +1",ring1='Dark Ring',
+		back="Umbra Cape",waist="Flume Belt +1",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 
-    sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
-        head="Nahtirah Hat",neck="Twilight Torque",
-        body="Gendewitha Bliaut",hands="Gendewitha Gages",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Bihu Cannions",feet="Gendewitha Galoshes"}
+	sets.defense.MDT = {main=gear.Staff.PDT,sub="Mephitis Grip",
+		head="Nahtirah Hat",neck="Twilight Torque",
+		body="Gende. Bilaut +1",hands="Gende. Gages +1",ring1='Dark Ring',ring2="Shadow Ring",
+		back="Solemnity Cape",waist="Flume Belt +1",legs="Bokwus Slops",feet="Gende. Galoshes +1"}
 
-    sets.Kiting = {feet="Aoidos' Cothurnes +2"}
+	sets.Kiting = {feet="Aoidos' Cothurnes +2"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -286,21 +279,21 @@ function init_gear_sets()
     
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {range="Linos",
-		head="Buremte Hat",neck="Asperity Necklace",ear1="Steelflash Earring",ear2="Bladeborn Earring",
-		body="Gendewitha Bliaut",hands="Leyline Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-		back="Letalis Mantle",waist="Witful Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Gende. Bilaut +1",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Goading Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 
-    -- Sets with weapons defined.
-    sets.engaged.Dagger = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Bihu Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Witful Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+	-- Sets with weapons defined.
+	sets.engaged.Dagger = {range="Linos",
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Gende. Bilaut +1",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Goading Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 
     -- Set if dual-wielding
-    sets.engaged.DW = {range="Angel Lyre",
-        head="Nahtirah Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Bihu Justaucorps",hands="Leyline Gloves",ring1="Rajas Ring",ring2="K'ayres Ring",
-        back="Atheling Mantle",waist="Witful Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
+    sets.engaged.DW = {range="Linos",
+		head="Nahtirah Hat",neck="Asperity Necklace",ear1="Digni. Earring",ear2="Bladeborn Earring",
+		body="Gende. Bilaut +1",hands="Buremte Gloves",ring1="Petrov Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Goading Belt",legs="Gende. Spats +1",feet="Gende. Galoshes +1"}
 end
 
 
@@ -499,7 +492,7 @@ end
 -- Called from adjust_timers(), which is only called on aftercast().
 function calculate_duration(spellName, spellMap)
     local mult = 1
-    if player.equipment.range == 'Terpander' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
+    if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
     
     if player.equipment.main == "Carnwenhan" then mult = mult + 0.1 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119

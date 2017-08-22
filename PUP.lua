@@ -23,9 +23,9 @@ function job_setup()
         ['Harlequin Head'] = 'Melee',
         ['Sharpshot Head'] = 'Ranged',
         ['Valoredge Head'] = 'Tank',
-        ['Stormwaker Head'] = 'Magic',
-        ['Soulsoother Head'] = 'Heal',
-        ['Spiritreaver Head'] = 'Nuke'
+        ['Stormwaker Frame'] = 'Magic',
+        ['Stormwaker Frame'] = 'Heal',
+        ['Stormwaker Frame'] = 'Nuke'
         }
 
     -- Subset of modes that use magic
@@ -64,14 +64,14 @@ end
 
 -- Define sets used by this job file.
 function init_gear_sets()
-    
+    	
     -- Precast Sets
 
-    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
-	hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Hiza. Haramaki +1",neck="Subtlety Spectacles",ear1="Steelflash Earring"}
+    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Incarnation Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
+	hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Hiza. Haramaki +1",neck="Subtlety Spectacles",ear1="Digni. Earring"}
     
-	sets.precast.Flourish1 = {head="Hizamaru Somen +1",ear2="Cessance Earring",waist="Klouskap Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
-	hands="Hizamaru Kote +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Steelflash Earring"}	
+	sets.precast.Flourish1 = {head="Hizamaru Somen +1",ear2="Cessance Earring",waist="Incarnation Sash",back="Dispersal Mantle",ring1="Varar Ring",ring2="Varar Ring",
+	hands="Hizamaru Kote +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Digni. Earring"}	
 	
 	
     -- Fast cast sets for spells
@@ -83,30 +83,15 @@ function init_gear_sets()
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {back="Mujin Mantle",neck="Magoraga Beads"})
 
     -- Precast sets to enhance JAs
+	sets.precast.JA['Overdrive'] = {body="Pitre Tobe +1"}
+	
     sets.precast.JA['Tactical Switch'] = {feet="Karagoz Scarpe"}
     
     sets.precast.JA['Repair'] = {feet="Foire Babouches +1",ear1="Guignol Earring",ear2="Pratik Earring",legs="Desultor Tassets"}
 
-    sets.precast.JA.Maneuver = {neck="Buffoon's Collar +1",body="Karagoz Farsetto",hands="Foire Dastanas +1",back="Visucius's Mantle",ear2="Domes. Earring"}
+    sets.precast.JA.Maneuver = {main="Midnights",neck="Buffoon's Collar +1",body="Karagoz Farsetto",hands="Foire Dastanas +1",back="Visucius's Mantle",ear1="Burana Earring"}
 
-	sets.precast.JA['Provoke'] = sets.enmity
-
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {
-		head="Herculean Helm",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
-		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
-        
-    -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {}
-
-	sets.precast.JA['Tactical Switch'] = {feet="Karagoz Scarpe"}
-    
-    sets.precast.JA['Repair'] = {feet="Foire Babouches +1",ear1="Guignol Earring",ear2="Pratik Earring",legs="Desultor Tassets"}
-
-    sets.precast.JA.Maneuver = {neck="Buffoon's Collar +1",body="Karagoz Farsetto",hands="Foire Dastanas +1",back="Visucius's Mantle",ear2="Domes. Earring"}
-
-
+	sets.precast.JA['Provoke'] = {ear1="Friomisi Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -116,6 +101,7 @@ function init_gear_sets()
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
+
 
     sets.enmity = {ear1="Friomisi Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring"}
   
@@ -124,7 +110,7 @@ function init_gear_sets()
     sets.precast.WS = {
 		head="Hizamaru Somen +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
 		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Fotia Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
+		back="Dispersal Mantle",waist="Fotia Belt",legs="Rao Haidate",feet="Hiza. Sune-ate +1"}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS, {
@@ -132,10 +118,20 @@ function init_gear_sets()
 	
     sets.precast.WS['Stringing Pummel'].Mod = set_combine(sets.precast.WS['Stringing Pummel'], {legs="Hiza. Hizayoroi +1"})
 
-    sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS, {neck="Fotia Gorget",body="Hiza. Haramaki +1",waist="Fotia Belt",
-	legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1",back="Rancorous Mantle",head="Hizamaru Somen +1"})
+    sets.precast.WS['Victory Smite'] = set_combine(sets.precast.WS, {
+	neck="Fotia Gorget",
+	body="Hiza. Haramaki +1",
+	waist="Moonbow Belt",
+	ear1="Brutal Earring",
+	ring1="Begrudging Ring",
+	ring2="Epona's Ring",
+	legs="Rao Haidate",
+	hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+	feet={ name="Ryuo Sune-Ate", augments={'STR+10','Attack+20','Crit. hit rate+3%',}},
+	back="Dispersal Mantle",
+	head="Rao Kabuto"})--Rao Haidate / Hiza. Hizayoroi +1
 
-    sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {head="Lilitu Headpiece",body="Naga Samue",hands="Rawhide Gloves",neck="Fotia Gorget",waist="Fotia Belt"})
+    sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {head="Lilitu Headpiece",body="Naga Samue",hands="Rawhide Gloves",legs="Samnuha Tights",neck="Fotia Gorget",waist="Moonbow Belt"})
     
     -- Midcast Sets
 
@@ -146,22 +142,23 @@ function init_gear_sets()
         
 
     -- Midcast sets for pet actions
-        sets.midcast.Pet.Cure = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",legs="Foire Churidars +1",waist="Ukko Sash"}
+        sets.midcast.Pet.Cure = {range="Animator P II",ear2="Enmerkar Earring",back="Visucius's Mantle",legs="Foire Churidars +1",waist="Ukko Sash"}
 
-		sets.midcast.Pet['Elemental Magic'] = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",hands="Naga Tekko",legs="Karagoz Pantaloni",feet="Naga Kyahan",waist="Ukko Sash"}
+		sets.midcast.Pet['Elemental Magic'] = {range="Animator P II",ear2="Enmerkar Earring",ear1="Burana Earring",back="Visucius's Mantle",head="Tali'ah Turban +1",body="Tali'ah Manteel +1",hands="Naga Tekko",legs="Tali'ah Sera. +1",feet="Tali'ah Crackows +1",waist="Ukko Sash"}
 
-		sets.midcast.Pet['Enfeebling Magic'] = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",hands="Naga Tekko",legs="Karagoz Pantaloni",feet="Naga Kyahan",waist="Ukko Sash"}
+		sets.midcast.Pet['Enfeebling Magic'] = {range="Animator P II",ear2="Enmerkar Earring",ear1="Burana Earring",back="Visucius's Mantle",head="Tali'ah Turban +1",body="Tali'ah Manteel +1",hands="Naga Tekko",legs="Tali'ah Sera. +1",feet="Tali'ah Crackows +1",waist="Ukko Sash"}
 	
-		sets.midcast.Pet['Dark Magic'] = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",hands="Naga Tekko",legs="Karagoz Pantaloni",feet="Naga Kyahan",waist="Ukko Sash"}
+		sets.midcast.Pet['Dark Magic'] = {range="Animator P II",ear2="Enmerkar Earring",ear1="Burana Earring",back="Visucius's Mantle",head="Tali'ah Turban +1",body="Tali'ah Manteel +1",hands="Naga Tekko",legs="Tali'ah Sera. +1",feet="Tali'ah Crackows +1",waist="Ukko Sash"}
 	
-		sets.midcast.Pet['Divine Magic'] = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",hands="Naga Tekko",legs="Karagoz Pantaloni",feet="Naga Kyahan",waist="Ukko Sash"}
+		sets.midcast.Pet['Divine Magic'] = {range="Animator P II",ear2="Enmerkar Earring",ear1="Burana Earring",back="Visucius's Mantle",head="Tali'ah Turban +1",body="Tali'ah Manteel +1",hands="Naga Tekko",legs="Tali'ah Sera. +1",feet="Tali'ah Crackows +1",waist="Ukko Sash"}
 	
-		sets.midcast.Pet['Enhancing Magic'] = {range="Divinator II",ear1="Cirque Earring",back="Visucius's Mantle",hands="Naga Tekko",legs="Karagoz Pantaloni",feet="Naga Kyahan",waist="Ukko Sash"}
+		sets.midcast.Pet['Enhancing Magic'] = {range="Animator P II",ear2="Enmerkar Earring",ear1="Burana Earring",back="Visucius's Mantle",head="Tali'ah Turban +1",body="Tali'ah Manteel +1",hands="Naga Tekko",legs="Tali'ah Sera. +1",feet="Tali'ah Crackows +1",waist="Ukko Sash"}
     
 	--Set for Pet Weapon Skill DMG MAX
 	
-	sets.midcast.Pet.Weaponskill = {neck="Empath Necklace",head="Karagoz Capello",body="Pantin Tobe +2",hands="Karagoz Guanti",legs="Karagoz Pantaloni",feet="Naga Kyahan",back="Dispersal Mantle",ear2="Domes. Earring",ear1="Cirque Earring",waist="Klouskap Sash",ring1="Overbearing Ring",ring2="Varar Ring"}
+	sets.midcast.Pet.Weaponskill = {neck="Empath Necklace",head="Karagoz Capello",body="Tali'ah Manteel +1",hands="Karagoz Guanti",legs="Karagoz Pantaloni",feet="Naga Kyahan",back="Dispersal Mantle",ear1="Burana Earring",ear2="Enmerkar Earring",waist="Incarnation Sash",ring1="Overbearing Ring",ring2="Varar Ring"}
 
+	--legs="Kara. Pantaloni +1"
     
     -- Sets to return to when not performing an action.
     
@@ -176,50 +173,56 @@ function init_gear_sets()
 	--Hiza. Hizayoroi +1 
 	--Hiza. Sune-ate +1
 	
+	----body="Foire Tobe +1"
+	
     -- Resting sets
-    sets.resting = {head="Pitre Taj +1",neck="Lissome Necklace",
-		ring1="Dark Ring",ring2="Defending Ring",back="Contriver's Cape",ear2="Domes. Earring",waist="Isa Belt"}
+    sets.resting = {head="Pitre Taj +1",neck="Sanctity Necklace",
+        ring1="Chirich Ring",ring2="Chirich Ring",back="Contriver's Cape",ear1="Infused Earring",waist="Isa Belt",feet="Rao Sune-Ate",legs="Rao Haidate",hands="Rao Kote"}
     
     -- Idle sets
 
     sets.idle = {ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Domes. Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Matrimony Band",ring2="Defending Ring",
-		back="Contriver's Cape",waist="Isa Belt",legs="Karagoz Pantaloni",feet="Hermes' Sandals"}--Sanctity Necklace/Burana Earring/Shepherd's Chain
+		head="Pitre Taj +1",neck="Empath Necklace",ear2="Enmerkar Earring",ear1="Burana Earring",
+		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Matrimony Band",ring2="Defending Ring",
+		back="Contriver's Cape",waist="Isa Belt",legs="Rao Haidate",feet="Hermes' Sandals"}--Sanctity Necklace/Burana Earring/Shepherd's Chain/Infused Earring
 
-    sets.idle.Town = set_combine(sets.idle, {range="Divinator",main="Denouements"})
-
+    sets.idle.Town = set_combine(sets.idle, {range="Animator P +1",main="Ohtas"})
+	--Denouements
+	--Ohtas
+	--Midnights
+	
     -- Set for idle while pet is out (eg: pet regen gear)
     sets.idle.Pet = sets.idle
 
     -- Idle sets to wear while pet is engaged
-    sets.idle.Pet.Engaged = {range="Divinator",ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Domes. Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Klouskap Sash",legs="Karagoz Pantaloni",feet="Naga Kyahan"}--Handler's Earring/Burana Earring
+    sets.idle.Pet.Engaged = {range="Animator P +1",ammo="Automat. Oil +3",
+		head="Tali'ah Turban +1",neck="Empath Necklace",ear2="Enmerkar Earring",ear1="Domes. Earring",
+		body="Pitre Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Incarnation Sash",legs="Tali'ah Sera. +1",feet="Naga Kyahan"}--Handler's Earring/Burana Earring
 
-	sets.idle.Pet.PetDT = set_combine(sets.idle.Pet.Engaged,  {range="Divinator",ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Handler's Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Isa Belt",legs="Karagoz Pantaloni",feet="Naga Kyahan"})--Pet: Damage Taken set
+		--Pet: Damage Taken set
+	sets.idle.Pet.PetDT = set_combine(sets.idle.Pet.Engaged,  {range="Animator P +1",ammo="Automat. Oil +3",
+		head="Rao Kabuto",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Rao Togi",hands="Rao Kote",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +1",feet="Rao Sune-Ate"})--PDT-26% 
 		
-    sets.idle.Pet.Engaged.Ranged = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",neck="Empath Necklace",
-	hands="Regimen Mittens",legs="Karagoz Pantaloni",ear2="Domes. Earring",ear1="Cirque Earring",back="Visucius's Mantle",
-	waist="Klouskap Sash"})
+    sets.idle.Pet.Engaged.Ranged = set_combine(sets.idle.Pet.Engaged, {range="Animator P +1",neck="Empath Necklace",
+	hands="Tali'ah Gages +1",legs="Tali'ah Sera. +1",ear1="Burana Earring",ear2="Enmerkar Earring",back="Visucius's Mantle",
+	waist="Incarnation Sash"})
 
-    sets.idle.Pet.Engaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
-	legs="Karagoz Pantaloni",feet="Naga Kyahan",hands="Naga Tekko",
-	ear2="Domes. Earring",ear1="Cirque Earring",back="Argochampsa Mantle",
-	waist="Klouskap Sash"})
+    sets.idle.Pet.Engaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",
+	legs="Tali'ah Sera. +1",feet="Naga Kyahan",hands="Naga Tekko",
+	ear1="Burana Earring",ear2="Enmerkar Earring",back="Argochampsa Mantle",
+	waist="Incarnation Sash"})
 
-	sets.idle.Pet.Engaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
-	legs="Karagoz Pantaloni",feet="Naga Kyahan",ear2="Domes. Earring",ear1="Cirque Earring",back="Visucius's Mantle",
-	waist="Klouskap Sash"})
+	sets.idle.Pet.Engaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",
+	legs="Tali'ah Sera. +1",feet="Naga Kyahan",hands="Tali'ah Gages +1",ear1="Burana Earring",ear2="Enmerkar Earring",back="Visucius's Mantle",
+	waist="Incarnation Sash"})
 	
-    sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",
-	legs="Karagoz Pantaloni",feet="Naga Kyahan",hands="Naga Tekko",
-	ear2="Domes. Earring",ear1="Cirque Earring",back="Argochampsa Mantle",
-	waist="Klouskap Sash"})
+    sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",
+	legs="Tali'ah Sera. +1",feet="Naga Kyahan",hands="Naga Tekko",
+	ear1="Burana Earring",ear2="Enmerkar Earring",back="Argochampsa Mantle",
+	waist="Incarnation Sash"})
 
 
     -- Defense sets
@@ -227,25 +230,30 @@ function init_gear_sets()
     sets.defense.Evasion = {
         head="Herculean Helm",neck="Subtlety Spectacles",ear1="Infused Earring",
         body="Hiza. Haramaki +1",hands="Herculean Gloves",ring1="Varar Ring",ring2="Defending Ring",
-        back="Dispersal Mantle",waist="Klouskap Sash",legs="Herculean Trousers",feet="Herculean Boots"}
+        back="Dispersal Mantle",waist="Incarnation Sash",legs="Herculean Trousers",feet="Herculean Boots"}
 
     sets.defense.PDT = {
         head="Herculean Helm",neck="Twilight Torque",
         body="Hiza. Haramaki +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-        back="Umbra Cape",waist="Klouskap Sash",legs="Herculean Trousers",feet="Herculean Boots"}
+        back="Umbra Cape",waist="Incarnation Sash",legs="Herculean Trousers",feet="Herculean Boots"}
 
-	sets.defense.PetDT = {range="Divinator",ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Handler's Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Isa Belt",legs="Karagoz Pantaloni",feet="Naga Kyahan"}
+	sets.defense.PetDT = {range="Animator P +1",ammo="Automat. Oil +3",
+		head="Rao Kabuto",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Rao Togi",hands="Rao Kote",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +1",feet="Rao Sune-Ate"}
 		
-    sets.defense.MDT = {
-        head="Herculean Helm",neck="Twilight Torque",
-        body="Hiza. Haramaki +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-        back="Mollusca Mantle",waist="Klouskap Sash",legs="Ta'lab Trousers",feet="Herculean Boots"}
+    sets.defense.MDT = {head="Rao Kabuto",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Rao Togi",hands="Rao Kote",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +1",feet="Rao Sune-Ate"}
 
-    sets.Kiting = {feet="Hermes' Sandals"}
-
+	--head="Herculean Helm",neck="Twilight Torque",
+    --body="Hiza. Haramaki +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
+    --back="Solemnity Cape",waist="Incarnation Sash",legs="Ta'lab Trousers",feet="Herculean Boots"	
+		
+    sets.Kiting = {head="Rao Kabuto",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Rao Togi",hands="Rao Kote",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +1",feet="Rao Sune-Ate"}
+	--feet="Hermes' Sandals"
     -- Engaged sets
 
     -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -256,59 +264,59 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"}--Karagoz Guanti/Karagoz Capello/Hurch'lan Sash/Clotharius Torque/Dispersal Mantle
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Dispersal Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}--Karagoz Guanti/Karagoz Capello/Hurch'lan Sash/Clotharius Torque/Dispersal Mantle
     sets.engaged.Acc = {ammo="Automat. Oil +3",
-		head="Hizamaru Somen +1",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
+		head="Hizamaru Somen +1",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
 		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Klouskap Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
+		back="Visucius's Mantle",waist="Incarnation Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
 	sets.engaged.Martial_Arts = {ammo="Automat. Oil +3",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Klouskap Sash",legs="Karagoz Pantaloni",feet="Herculean Boots"}
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Dispersal Mantle",waist="Incarnation Sash",legs="Karagoz Pantaloni",feet="Herculean Boots"}
 	sets.engaged.Hizamaru = {ammo="Automat. Oil +3",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
 		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Klouskap Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
+		back="Dispersal Mantle",waist="Incarnation Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
 	sets.engaged.DT = {ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",waist="Klouskap Sash",legs="Herculean Trousers",feet="Herculean Boots"}
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",waist="Incarnation Sash",legs="Herculean Trousers",feet="Herculean Boots"}
     sets.engaged.Acc.DT = {ammo="Automat. Oil +3",
-		head="Dampening Tam",neck="Twilight Torque",ear1="Steelflash Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Umbra Cape",waist="Klouskap Sash",legs={ name="Taeon Tights", augments={'Accuracy+17','"Triple Atk."+2','Crit. hit damage +3%',}},feet="Herculean Boots"}
+		head="Dampening Tam",neck="Twilight Torque",ear1="Digni. Earring",ear2="Cessance Earring",
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Umbra Cape",waist="Incarnation Sash",legs="Herculean Trousers",feet="Herculean Boots"}
 	------------------------------------------------------------------------------
 	-- When Pet is Engaged this what will be Equiped for armor while your weapons are Drawn.
 	------------------------------------------------------------------------------
-	sets.engaged.PetEngaged = {range="Divinator",ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Domes. Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Klouskap Sash",legs="Karagoz Pantaloni",feet="Naga Kyahan"}
+	sets.engaged.PetEngaged = {range="Animator P +1",ammo="Automat. Oil +3",
+		head="Tali'ah Turban +1",neck="Empath Necklace",ear2="Enmerkar Earring",ear1="Domes. Earring",
+		body="Pitre Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Incarnation Sash",legs="Tali'ah Sera. +1",feet="Naga Kyahan"}
 		
-	sets.engaged.PetEngaged.PetDT = set_combine(sets.idle.Pet.Engaged,  {range="Divinator",ammo="Automat. Oil +3",
-		head="Pitre Taj +1",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Handler's Earring",
-		body="Foire Tobe +1",hands="Regimen Mittens",ring1="Varar Ring",ring2="Varar Ring",
-		back="Visucius's Mantle",waist="Isa Belt",legs="Karagoz Pantaloni",feet="Naga Kyahan"})--Pet: Damage Taken set
+	sets.engaged.PetEngaged.PetDT = set_combine(sets.idle.Pet.Engaged,  {range="Animator P +1",ammo="Automat. Oil +3",
+		head="Rao Kabuto",neck="Empath Necklace",ear1="Handler's Earring +1",ear2="Enmerkar Earring",
+		body="Rao Togi",hands="Rao Kote",ring1="Varar Ring",ring2="Varar Ring",
+		back="Visucius's Mantle",waist="Isa Belt",legs="Tali'ah Sera. +1",feet="Rao Sune-Ate"})--Pet: Damage Taken set
 		
-    sets.engaged.PetEngaged.Ranged = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",neck="Empath Necklace",
-	hands="Regimen Mittens",legs="Karagoz Pantaloni",ear2="Domes. Earring",ear1="Cirque Earring",back="Visucius's Mantle",
-	waist="Klouskap Sash"})
+    sets.engaged.PetEngaged.Ranged = set_combine(sets.idle.Pet.Engaged, {range="Animator P +1",neck="Empath Necklace",
+	hands="Tali'ah Gages +1",legs="Tali'ah Sera. +1",ear1="Domes. Earring",ear2="Enmerkar Earring",back="Visucius's Mantle",
+	waist="Incarnation Sash"})
 
-    sets.engaged.PetEngaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
+    sets.engaged.PetEngaged.Nuke = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Dispersal Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"})
 
-	sets.engaged.PetEngaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
+	sets.engaged.PetEngaged.Heal = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Dispersal Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"})
 	
-    sets.engaged.PetEngaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Divinator II",ammo="Automat. Oil +3",
+    sets.engaged.PetEngaged.Magic = set_combine(sets.idle.Pet.Engaged, {range="Animator P II",ammo="Automat. Oil +3",
 		head="Herculean Helm",neck="Asperity Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Dispersal Mantle",waist="Windbuffet Belt +1",legs="Herculean Trousers",feet="Herculean Boots"})
+		body="Tali'ah Manteel +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Dispersal Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"})
 	
 end
 
