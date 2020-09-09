@@ -236,12 +236,12 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
    sets.idle = {main="Taming Sari", sub="Legion Scutum",range="Linos",
 		head="Befouled Crown",neck="Arciela's Grace +1",ear1="Aoidos' Earring",ear2="Loquacious Earring",
-		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Swith Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
 
 	sets.idle.Town = {main="Taming Sari", sub="Legion Scutum",range="Linos",
 		head="Befouled Crown",neck="Arciela's Grace +1",ear1="Aoidos' Earring",ear2="Loquacious Earring",
-		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Gende. Bilaut +1",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Swith Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Aoidos' Cothurnes +2"}
 
 	sets.idle.Weak = {main="Taming Sari", sub="Legion Scutum",range="Linos",

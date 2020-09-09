@@ -34,6 +34,21 @@ function user_setup()
 	 send_command('bind @` gs c activate MagicBurst')
 	
     --select_default_macro_book()
+	--[[
+        Alt + (tilda) will turn on or off the Lock Weapon
+    ]]
+    state.LockWeapon = M(false, "Lock Weapon")
+	-----------------------------------------------
+	state.Moving = M(false, "moving")
+	state.Refresh = M(false, "Refresh")
+	
+	send_command("bind !` gs c toggle LockWeapon")
+	send_command("bind !end gs c toggle Refresh")
+end
+
+function user_unload()
+	send_command("unbind !`")
+	send_command('unbind !end')
 end
 
 
@@ -190,17 +205,17 @@ function init_gear_sets()
     sets.idle = {ammo="Ginsen",
 		head="Befouled Crown",neck="Twilight Torque",ear1="Estq. Earring",ear2="Loquacious Earring",
 		body="Vitivation Tabard",hands="Vitivation Gloves",ring2="Defending Ring",ring1="Kishar Ring",
-		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Vitivation Boots"}--Homiliary/Fucho-No-Obi
+		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Rawhide Trousers",feet="Vitivation Boots"}--Homiliary/Fucho-No-Obi
 
     sets.idle.Town = {main="Excalibur",sub="Beatific Shield",ammo="Ginsen",
 		head="Befouled Crown",neck="Twilight Torque",ear1="Estq. Earring",ear2="Loquacious Earring",
 		body="Vitivation Tabard",hands="Vitivation Gloves",ring2="Defending Ring",ring1="Kishar Ring",
-		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Vitivation Boots"}
+		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Rawhide Trousers",feet="Vitivation Boots"}
     
     sets.idle.Weak = {ammo="Ginsen",
 		head="Befouled Crown",neck="Twilight Torque",ear1="Estq. Earring",ear2="Loquacious Earring",
 		body="Vitivation Tabard",hands="Vitivation Gloves",ring2="Defending Ring",ring1="Kishar Ring",
-		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",feet="Vitivation Boots"}
+		back="Repulse Mantle",waist="Windbuffet Belt +1",legs="Rawhide Trousers",feet="Vitivation Boots"}
 
     sets.idle.PDT = {ammo="Demonry Stone",
         head="Aya. Zucchetto +1",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
@@ -225,6 +240,8 @@ function init_gear_sets()
         back="Repulse Mantle",waist="Flume Belt",legs="Aya. Cosciales +1",feet="Aya. Gambieras +1"}
 
     sets.Kiting = {legs="Carmine Cuisses +1"}
+	sets.Adoulin = {legs="Carmine Cuisses +1"}
+	sets.MoveSpeed = {legs="Carmine Cuisses +1"}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -248,8 +265,8 @@ function init_gear_sets()
 		back="Atheling Mantle",waist="Windbuffet Belt +1",legs="Aya. Cosciales +1",feet="Aya. Gambieras +1"}--Pya'ekue Belt
 
 	sets.engaged.Acc = {ammo="Ginsen",
-		head="Aya. Zucchetto +1",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Bladeborn Earring",
-		body="Ayanmo Corazza +1",hands="Aya. Manopolas +1",ring1="Rajas Ring",ring2="Ramuh Ring +1",
+		head="Alhazen Hat +1",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Bladeborn Earring",
+		body="Ayanmo Corazza +1",hands="Aya. Manopolas +1",ring1="Cacoethic Ring +1",ring2="Cacoethic Ring",
 		back="Atheling Mantle",waist="Kentarch Belt",legs="Carmine Cuisses +1",feet="Aya. Gambieras +1"}
 
 		
@@ -325,6 +342,92 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
 end
 
+
+function validateTextInformation()
+if state.LockWeapon.value then
+        --main_text_hub.toggle_lock_weapon = const_on
+    else
+        --main_text_hub.toggle_lock_weapon = const_off
+    end
+end
+
+function job_state_change(stateField, newValue, oldValue)
+   if stateField == "Lock Weapon" then --Updates HUB and disables/enables window for Lock Weapon
+        if newValue == true then
+			disable("main")
+			disable("sub")
+            --main_text_hub.toggle_lock_weapon = "ON"
+        else
+            enable("main")
+			enable("sub")
+            --main_text_hub.toggle_lock_weapon = "OFF"
+        end 
+end
+end
+------------------------------------Mov---------------------------------------------
+mov= {counter=0}
+if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
+	mov.x = windower.ffxi.get_mob_by_index(player.index).x
+	mov.y = windower.ffxi.get_mob_by_index(player.index).y
+	mov.z = windower.ffxi.get_mob_by_index(player.index).z
+end	
+
+moving = false
+windower.raw_register_event('prerender', function()
+	mov.counter = mov.counter +1;
+	if buffactive['Mana Wall'] then
+		moving = false
+	elseif mov.counter > 15 then
+		local p1 = windower.ffxi.get_mob_by_index(player.index)
+		if p1 and p1.x and mov.x then
+			dist = math.sqrt( (p1.x-mov.x)^2 + (p1.y-mov.y)^2 + (p1.z-mov.z)^2 )
+			if dist > 1 and not moving then
+				state.Moving.value = true
+				send_command('gs c update')
+				if world.area:contains("Adoulin") then
+					send_command('gs equip sets.Adoulin')
+					else
+					send_command('gs equip sets.MoveSpeed')
+				end
+		moving = true
+			elseif dist < 1 and moving then
+				state.Moving.value = false
+				send_command('gs c update')
+				moving = false
+			end
+		end
+	if p1 and p1.x then
+		mov.x = p1.x
+		mov.y = p1.y
+		mov.z = p1.z
+	end
+	
+	mov.counter = 0
+
+	end
+end)
+------------------------Auto-Refresh-------------------------------------------------
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    if spell.type ~= 'JobAbility' then
+        auto_refresh()
+    end
+end
+
+
+function auto_refresh()
+    local spell_recasts = windower.ffxi.get_spell_recasts()
+    if state.Refresh.value == true then 
+	if not (buffactive['Refresh']) then
+        if not (buffactive['Invisible'] or buffactive['Weakness'] or buffactive['Sublimation: Activated'] or buffactive['Sublimation: Complete']) then
+            if spell_recasts[10] == 0 then
+                send_command('@wait 2;input /ma "Refresh" <me>')
+            end
+        end
+    
+    end         
+end
+end
+
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- Lock feet after using Mana Wall.
     if not spell.interrupted then
@@ -375,19 +478,19 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
 	elseif player.sub_job == 'WHM' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
 	elseif player.sub_job == 'BLM' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
     elseif player.sub_job == 'SCH' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
 	elseif player.sub_job == 'THF' then
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
     else
-        set_macro_page(1, 3)
+        set_macro_page(1, 5)
     end
 end
 end

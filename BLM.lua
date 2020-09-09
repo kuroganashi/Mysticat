@@ -219,7 +219,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {main="Chatoyant Staff",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Serpentes Sabots"}
     
 
@@ -228,7 +228,7 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {main="Lathi", sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
@@ -247,7 +247,7 @@ function init_gear_sets()
     -- Town gear.
     sets.idle.Town = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
         
     -- Defense sets

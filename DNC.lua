@@ -7,6 +7,7 @@
     
     gs c step
         Uses the currently configured step on the target, with either <t> or <stnpc> depending on setting.
+
     gs c step t
         Uses the currently configured step on the target, but forces use of <t>.
     
@@ -58,15 +59,16 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Fodder')
+    state.OffenseMode:options('Normal', 'Acc', 'Recommend', 'Store_TP', 'TEST_TIG')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Fodder')
+    state.WeaponskillMode:options('Normal', 'Acc')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
 
 
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    gear.default.weaponskill_waist = "Caudata Belt"
+    gear.default.weaponskill_neck = "Fotia Necklace"
+    gear.default.weaponskill_waist = "Fotia Belt"
     
+
     -- Additional local binds
     send_command('bind ^= gs c cycle mainstep')
     send_command('bind != gs c cycle altstep')
@@ -100,265 +102,502 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
 
-    sets.precast.JA['No Foot Rise'] = {body="Horos Casaque"}
+    sets.precast.JA['No Foot Rise'] = {body="Horos Casaque +1"}
 
-    sets.precast.JA['Trance'] = {head="Horos Tiara"}
+    sets.precast.JA['Trance'] = {head="Horos Tiara +1"}
     
+	sets.precast.JA['Fan Dance'] = {hands="Horos Bangles +1"}
 
+	sets.precast.JA['Saber Dance'] = {legs="Horos Tights +1"}
+	
+	sets.TP_Bonus        = {ear2="Cessance Earring"}
+	
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
-		head="Etoile Tiara",neck="Tjukurrpa Medal",ear2="Roundel Earring",ear1="Soil Pearl",
-		body="Dancer's Casaque",hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
-		back="Toetapper Mantle",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
+    sets.precast.Waltz = {ammo="Yamarang",
+		head="Horos Tiara +1",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",ring1="Titan Ring",ring2="Titan Ring",
+		body="Maxixi Casaque +1",hands="Slither Gloves +1",
+		back="Toetapper Mantle",waist="Warwolf Belt",legs="Samnuha Tights",feet="Maxixi Toe Shoes +1"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
-    sets.precast.Samba = {head="Dancer's Tiara"}
+    sets.precast.Samba = {head="Maxixi Tiara +1",back="Senuna's Mantle"}
 
-    sets.precast.Jig = {legs="Etoile Tights", feet="Dancer's Shoes"}
+    sets.precast.Jig = {legs="Horos Tights +1",feet="Maxixi Toe Shoes +1"}
 
-    sets.precast.Step = {ear1="Steelflash Earring",ear2="Choreia Earring",hands="Dancer's Bangles",
-	feet="Etoile Shoes",ammo="Honed Tathlum",head="Dampening Tam",waist="Anguinus Belt",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}}}
-    sets.precast.Step['Feather Step'] = {ear1="Steelflash Earring",ear2="Choreia Earring",hands="Dancer's Bangles",feet="Charis Shoes +2",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},ammo="Honed Tathlum",head="Dampening Tam",waist="Anguinus Belt"}
+   sets.precast.Step = {ammo="Amar Cluster",
+	head="Maxixi Tiara +1",hands="Maxixi Bangles +1",feet="Horos Shoes +1",ring1="Cacoethic Ring +1",ring2="Cacoethic Ring",waist="Windbuffet Belt +1",back="Senuna's Mantle"}
+	
+	sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step,  {hands="Maxixi Bangles +1",feet="Maculele Toeshoes"})
 
-    sets.precast.Flourish1 = {}
-    sets.precast.Flourish1['Violent Flourish'] = {ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		body="Etoile Casaque",hands="Taeon Gloves",ring2="Sangoma Ring",head="Dampening Tam",
-		back="Legalis Mantle",legs="Samnuha Tights",feet="Rawhide Boots",ammo="Honed Tathlum"} -- magic accuracy
-    sets.precast.Flourish1['Desperate Flourish'] = {ammo="Charis Feather",
-		head="Dampening Tam",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Rajas Ring",ring2="Mars's Ring",
-		back="Letalis Mantle",waist="Anguinus Belt",legs="Samnuha Tights",feet="Rawhide Boots"} -- acc gear
+	--Flourish
+	sets.precast.Flourish1 = {ammo="Amar Cluster",
+	waist="Windbuffet Belt +1",back="Senuna's Mantle",ring1="Cacoethic Ring +1",ring2="Chirich Ring"}
+	
+	sets.precast.Flourish1['Violent Flourish'] =  set_combine(sets.precast.Flourish1,   {	 ammo="Pemphredo Tathlum",
+		ear1="Digni. Earring",ear2="Gwati Earring",
+		head="Meghanada Visor +2",body="Horos Casaque +1",hands="Meg. Gloves +2",ring2="Chirich Ring",ring1="Cacoethic Ring +1",
+		back="Senuna's Mantle",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}) -- magic accuracy
+	
+	sets.precast.Flourish1['Desperate Flourish'] =  set_combine(sets.precast.Flourish1,  {ammo="Yamarang",
+		head="Meghanada Visor +2",
+		body="Samnuha Coat",hands="Meg. Gloves +2",ring1="Cacoethic Ring +1",ring2="Chirich Ring",
+		back="Senuna's Mantle",waist="Windbuffet Belt +1",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}) -- acc gear (Senuna's Mantle)
 
-    sets.precast.Flourish2 = {}
-    sets.precast.Flourish2['Reverse Flourish'] = {hands="Charis Bangles +2"}
+	sets.precast.Flourish1['Animated Flourish'] = sets.enmity
 
-    sets.precast.Flourish3 = {}
-    sets.precast.Flourish3['Striking Flourish'] = {body="Charis Casaque +2",head="Dampening Tam",legs="Samnuha Tights"}
-    sets.precast.Flourish3['Climactic Flourish'] = {head="Charis Tiara +2",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}}}
+	--Flourish2
+	sets.precast.Flourish2 = {}
+	
+	sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles",back="Toetapper Mantle"}
 
-    -- Fast cast sets for spells
-    
-    sets.precast.FC = {ammo="Impatiens",head="Anwig Salade",neck="Voltsurge Torque",
-	ear2="Loquacious Earring",hands="Leyline Gloves",ear1="Mendi. Earring",
-	ring1="Weatherspoon Ring",ring2="Prolix Ring",body="Mirke Wardecors"}
+	sets.precast.Flourish2['Wild Flourish'] = {hands="Maculele Bangles",legs="Maxixi Tights +1",back="Senuna's Mantle"}
+	
+	--Flourish3
+	sets.precast.Flourish3 = {ammo="Amar Cluster",
+	waist="Windbuffet Belt +1",back="Senuna's Mantle",ring1="Cacoethic Ring +1",ring2="Chirich Ring"}
+	
+	sets.precast.Flourish3['Striking Flourish'] =  set_combine(sets.precast.Flourish3,   {body="Maculele Casaque"})
+	
+	sets.precast.Flourish3['Climactic Flourish'] =  set_combine(sets.precast.Flourish3,   {head="Maculele Tiara"})
 
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {back="Mujin Mantle",neck="Magoraga Beads"})
+	-- Fast cast sets for spells
 
-       
-    -- Weaponskill sets
-    -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Charis Feather",
-		head="Dampening Tam",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Rawhide Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Letalis Mantle",waist="Fotia Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Honed Tathlum", back="Toetapper Mantle"})
-    
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {hands="Taeon Gloves",
-	head="Uk'uxkaj Cap",ring1="Garuda Ring",ring2="Garuda Ring",back="Vespid Mantle"})
-    sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {ammo="Honed Tathlum", back="Toetapper Mantle"})
-    sets.precast.WS['Exenterator'].Fodder = set_combine(sets.precast.WS['Exenterator'], {waist="Fotia Belt"})
+	sets.precast.FC = {ammo="Impatiens",
+	head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",hands="Leyline Gloves",feet="Meg. Jam. +1",
+	legs="Rawhide Trousers",
+	ring1="Weatherspoon Ring",ring2="Prolix Ring",body="Dread Jupon"}
 
-    sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {hands="Rawhide Gloves",back="Vespid Mantle"})
-    sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS.Acc, {hands="Taeon Gloves"})
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {back="Mujin Mantle",neck="Magoraga Beads"})
 
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo="Charis Feather",head="Lilitu Headgear",back="Vespid Mantle"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {ammo="Honed Tathlum", back="Toetapper Mantle"})
+    sets.enmity = {ear1="Friomisi Earring",ear2="Cryptic Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring",feet="Rager Ledel. +1",head="Halitus Helm"}
 
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {ammo="Charis Feather",head="Lilitu Headgear",neck="Fotia Gorget",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
-	hands="Rawhide Gloves",ring2="Ramuh Ring",back="Rancorous Mantle",waist="Fotia Belt",feet="Rawhide Boots"})
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Honed Tathlum", back="Toetapper Mantle"})
+	-- Weaponskill sets
+	-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS = {
+		ammo="Yamarang",
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
+		hands="Meg. Gloves +2",
+		legs="Samnuha Tights",
+		feet="Meg. Jam. +1",
+		back="Senuna's Mantle",
+		ear1="Sherida Earring",ear2="Moonshade Earring",
+		ring1="Shukuyu Ring",ring2="Epona's Ring",
+		neck="Fotia Gorget",waist="Fotia Belt",
+		}
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo="Amar Cluster", back="Senuna's Mantle"})
 
-    sets.precast.WS['Aeolian Edge'] = {ammo="Dosis Tathlum",
-        head="Dampening Tam",neck="Fotia Gorget",ear1="Friomisi Earring",ear2="Moonshade Earring",
-        body="Samnuha Coat",hands="Slither Gloves +1",ring1="Acumen Ring",ring2="Fenrir Ring",
-        back="Toro Cape",waist="Fotia Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    
-    sets.precast.Skillchain = {hands="Charis Bangles +2"}
-    
-    
+	gear.default.weaponskill_neck = "Fotia Necklace"
+	gear.default.weaponskill_waist = "Fotia Belt"
+
+	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+	ammo="Yamarang",
+	head="Meghanada Visor +2",
+	body="Meg. Cuirie +2",
+	hands="Meg. Gloves +2",
+	legs="Meg. Chausses +2",
+	feet="Meg. Jam. +1",
+	neck="Fotia Gorget",waist="Fotia Belt",
+	ear1="Sherida Earring",ear2="Moonshade Earring",
+	ring1="Shukuyu Ring",ring2="Epona's Ring",
+	back="Senuna's Mantle"
+	})--8,190 
+	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {ammo="Amar Cluster", back="Senuna's Mantle"})
+	sets.precast.WS['Exenterator'].Mod = set_combine(sets.precast.WS['Exenterator'], {body="Rawhide Vest",waist="Fotia Belt"})
+
+	sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
+	ammo="Yamarang",
+	head="Meghanada Visor +2",
+	body={ name="Herculean Vest", augments={'Accuracy+18','"Triple Atk."+2','STR+10','Attack+6',}},
+	hands="Meg. Gloves +2",
+	legs="Samnuha Tights",
+	feet="Lustratio Leggings",
+	back="Senuna's Mantle",
+	ring1="Hetairoi Ring",ring2="Epona's Ring",
+	ear1="Sherida Earring",ear2="Moonshade Earring",
+	neck="Fotia Gorget",waist="Fotia Belt",
+	})
+	sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS.Acc, {back="Senuna's Mantle",head="Meghanada Visor +2",hands="Meg. Gloves +2"})
+
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {back="Senuna's Mantle",head="Meghanada Visor +2",hands="Meg. Gloves +2"})
+	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {ammo="Amar Cluster",back="Senuna's Mantle"})
+	sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {body="Maxixi Casaque +1",waist="Fotia Belt"})
+
+	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+	ammo="Charis Feather",
+	head="Adhemar Bonnet",
+	body="Meg. Cuirie +2",
+	hands="Meg. Gloves +2",
+	legs="Lustratio Subligar",
+	feet="Lustratio Leggings",
+	ear1="Ishvara Earring",ear2="Moonshade Earring",
+	ring2="Ramuh Ring",ring1="Begrudging Ring",
+	back="Senuna's Mantle",
+	neck="Caro Necklace",waist="Grunfeld Rope",
+	})--Lustra Feet A(19,741) / Lustra Feet B(20,007) / Lustra Feet D(20,197)
+
+	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {ammo="Yamarang",back="Senuna's Mantle"})
+
+	sets.precast.WS['Aeolian Edge'] = {
+		ammo="Pemphredo Tathlum",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},
+		body="Samnuha Coat",
+		hands="Leyline Gloves",
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		ring1="Petrov Ring",ring2="Fenrir Ring",
+		back="Toro Cape",
+		ear1="Friomisi Earring",ear2="Moonshade Earring",
+		neck="Sanctity Necklace",waist="Eschan Stone",
+		}
+
+	sets.precast.Skillchain = {hands="Maculele Bangles",legs="Maxixi Tights +1",back="Senuna's Mantle"}
+
+
     -- Midcast Sets
-    
-    sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Anwig Salade",neck="Voltsurge Torque",ear2="Loquacious Earring",ear1="Mendi. Earring",
-		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Mujin Mantle",legs="Iuitl Tights",feet="Rawhide Boots"}
-        
-    -- Specific spells
-    sets.midcast.Utsusemi = {ammo="Impatiens",
-		head="Anwig Salade",neck="Magoraga Beads",ear2="Loquacious Earring",ear1="Mendi. Earring",
-		body="Mirke Wardecors",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
-		back="Mujin Mantle",legs="Iuitl Tights",feet="Rawhide Boots"}
+   sets.midcast.FastRecast = {ammo="Impatiens",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Mujin Mantle",
+		legs="Rawhide Trousers",
+		feet="Meg. Jam. +1"}
 
-    
-    -- Sets to return to when not performing an action.
-    
-    -- Resting sets
-    sets.resting = {head="Ocelomeh Headpiece +1",neck="Lissome Necklace",
-		ring1="Matrimony Band",ring2="Paguroidea Ring"}
-    sets.ExtraRegen = {head="Ocelomeh Headpiece +1",neck="Lissome Necklace",ring2="Paguroidea Ring"}
-    
-	-- Enchufla (x2) 
-    -- Idle sets
-
-    sets.idle = {ammo="Ginsen",
-		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
-
-    sets.idle.Town = {main="Enchufla",sub="Enchufla",ammo="Ginsen",
-		head="Khepri Bonnet",neck="Lissome Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
-    
-    sets.idle.Weak = {ammo="Ginsen",
-		head="Uk'uxkaj Cap",neck="Lissome Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Taeon Gloves",ring1="Matrimony Band",ring2="Paguroidea Ring",
-		back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Skadi's Jambeaux +1"}
-    
-    -- Defense sets
-
-    sets.defense.Evasion = {
-        head="Taeon Chapeau",neck="Subtlety Spectacles",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Dark Ring",ring2="Defending Ring",
-        back="Toetapper Mantle",waist="Cetl Belt",legs="Ta'lab Trousers",feet="Taeon Boots"}
-
-    sets.defense.PDT = {ammo="Iron Gobbet",
-        head="Dampening Tam",neck="Twilight Torque",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Dark Ring",ring2="Defending Ring",
-        back="Mollusca Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Rawhide Boots"}
-
-    sets.defense.MDT = {ammo="Demonry Stone",
-        head="Dampening Tam",neck="Twilight Torque",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Dark Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Cetl Belt",legs="Ta'lab Trousers",feet="Taeon Boots"}
-
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
-
-    -- Engaged sets
-
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
-    -- Normal melee group
-    sets.engaged = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-
-    sets.engaged.Fodder = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.Fodder.Evasion = {ammo="Ginsen",
-        head="Alhazen Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-
-    sets.engaged.Acc = {ammo="Honed Tathlum",
-        head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-        body="Samnuha Coat",hands="Slither Gloves +1",ring1="Rajas Ring",ring2="Mars's Ring",
-        back="Letalis Mantle",waist="Anguinus Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.Evasion = {ammo="Ginsen",
-        head="Taeon Chapeau",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.PDT = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.Acc.Evasion = {ammo="Honed Tathlum",
-        head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Anguinus Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Slither Gloves +1",ring1="Rajas Ring",ring2="Mars's Ring",
-        back="Letalis Mantle",waist="Anguinus Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-
-    -- Custom melee group: High Haste (2x March or Haste)
-    sets.engaged.HighHaste = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-
-    sets.engaged.Fodder.HighHaste = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.Fodder.Evasion.HighHaste = {ammo="Ginsen",
-        head="Alhazen Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-
-    sets.engaged.Acc.HighHaste = {ammo="Honed Tathlum",
-        head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-        body="Samnuha Coat",hands="Slither Gloves +1",ring1="Rajas Ring",ring2="Mars's Ring",
-        back="Letalis Mantle",waist="Anguinus Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.Evasion.HighHaste = {ammo="Charis Feather",
-        head="Dampening Tam",neck="Subtlety Spectacles",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Beeline Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.Acc.Evasion.HighHaste = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Subtlety Spectacles",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Samnuha Coat",hands="Taeon Gloves",ring1="Beeline Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Anguinius Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.PDT.HighHaste = {ammo="Charis Feather",
-        head="Dampening Tam",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Patricius Ring",ring2="Epona's Ring",
-        back="Shadow Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
-    sets.engaged.Acc.PDT.HighHaste = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Samnuha Coat",hands="Taeon Gloves",ring1="Patricius Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Taeon Boots"}
+	-- Specific spells
+	sets.midcast.Utsusemi = {ammo="Impatiens",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Magoraga Beads",ear1="Mendi. Earring",ear2="Loquacious Earring",
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",
+		back="Mujin Mantle",
+		legs="Rawhide Trousers",
+		feet="Meg. Jam. +1"}
 
 
-    -- Custom melee group: Max Haste (2x March + Haste)
-    sets.engaged.MaxHaste = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
+	-- Sets to return to when not performing an action.
 
-    -- Getting Marches+Haste from Trust NPCs, doesn't cap delay.
-    sets.engaged.Fodder.MaxHaste = {ammo="Ginsen",
-        head="Iuitl headgear",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.Fodder.Evasion.MaxHaste = {ammo="Ginsen",
-        head="Alhazen Hat",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body={ name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},hands="Taeon Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Cetl Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-
-    sets.engaged.Acc.MaxHaste = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Subtlety Spectacles",ear1="Steelflash Earring",ear2="Heartseeker Earring",
-        body="Emet Harness +1",hands="Slither Gloves +1",ring1="Rajas Ring",ring2="Mars's Ring",
-        back="Letalis Mantle",waist="Anguinus Belt",legs={ name="Taeon Tights", augments={'Accuracy+11','"Triple Atk."+2','Weapon skill damage +3%',}},feet="Taeon Boots"}
-    sets.engaged.Evasion.MaxHaste = {ammo="Charis Feather",
-        head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Beeline Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
-    sets.engaged.Acc.Evasion.MaxHaste = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Subtlety Spectacles",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Beeline Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Anguinius Belt",legs="Samnuha Tights",feet="Taeon Boots"}
-    sets.engaged.PDT.MaxHaste = {ammo="Charis Feather",
-        head="Dampening Tam",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Patricius Ring",ring2="Epona's Ring",
-        back="Shadow Mantle",waist="Windbuffet Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
-    sets.engaged.Acc.PDT.MaxHaste = {ammo="Honed Tathlum",
-        head="Dampening Tam",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Emet Harness +1",hands="Taeon Gloves",ring1="Patricius Ring",ring2="Epona's Ring",
-        back="Toetapper Mantle",waist="Anguinius Belt",legs="Samnuha Tights",feet="Taeon Boots"}
+	-- Resting sets
+	sets.resting = {head="Meghanada Visor +2",body="Meg. Cuirie +2",hands="Turms Mittens",legs="Turms Subligar",feet="Turms Leggings",neck="Sanctity Necklace",ring1="Chirich Ring",ring2="Chirich Ring"}
+	sets.ExtraRegen = {head="Meghanada Visor +2",body="Meg. Cuirie +2",hands="Turms Mittens",legs="Turms Subligar",feet="Turms Leggings",neck="Sanctity Necklace",ring1="Chirich Ring",ring2="Chirich Ring"}
 
 
+	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-    -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Saber Dance'] = {legs="Horos Tights"}
-    sets.buff['Climactic Flourish'] = {head="Charis Tiara +2"}
+	--Turms Mittens  (hands)
+	--Turms Subligar (legs)
+	--Turms Leggings (feet)
+	
+	sets.idle.Town = {main="Aeneas",sub="Polyhymnia",ammo="Staunch Tathlum",
+		head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+		body="Meg. Cuirie +2",hands="Turms Mittens",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Flume Belt",legs="Turms Subligar",feet="Skd. Jambeaux +1"}--Atoyac/Uk'uxkaj Cap
+
+	sets.idle.Field = {ammo="Staunch Tathlum",
+		head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+		body="Meg. Cuirie +2",hands="Turms Mittens",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Flume Belt",legs="Turms Subligar",feet="Skd. Jambeaux +1"}
+
+	sets.idle.Weak = {ammo="Staunch Tathlum",
+		head="Meghanada Visor +2",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
+		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet="Skd. Jambeaux +1"}
+
+	-- Defense sets
+
+	sets.defense.Evasion = {
+		head="Meghanada Visor +2",neck="Torero Torque",
+		body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Defending Ring",
+		back="Toetapper Mantle",waist="Flume Belt",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+
+	sets.defense.PDT = {
+		ammo="Staunch Tathlum",
+		head="Meghanada Visor +2",neck="Twilight Torque",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+
+	sets.defense.MDT = {ammo="Staunch Tathlum",
+		head="Skormoth Mask",neck="Twilight Torque",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Flume Belt",legs="Ta'lab Trousers",feet="Meg. Jam. +1"}
+
+	sets.Kiting = {feet="Skd. Jambeaux +1"}
+
+	-- Engaged sets
+
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+
+	-- Normal melee group
+	sets.engaged = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}--3679.937
+		
+	sets.engaged.Acc = {
+		ammo="Amar Cluster",
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
+		hands="Meg. Gloves +2",
+		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +1",
+		neck="Subtlety Spec.",
+		ear1="Digni. Earring",ear2="Heartseeker Earring",
+		ring1="Cacoethic Ring +1",ring2="Cacoethic Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+		
+	sets.engaged.Recommend = {
+		ammo="Yamarang",
+		head="Adhemar Bonnet",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}
+	
+	sets.engaged.Store_TP = {
+		ammo="Yamarang",
+		head="Maculele Tiara",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet="Horos Toe Shoes",
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Chirich Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}--Mummu Jacket +1 
+	
+	sets.engaged.TEST_TIG = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+	
+	sets.engaged.Evasion = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Ej Necklace",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Horos Shoes +1"}
+	sets.engaged.Acc.Evasion = {ammo="Amar Cluster",
+		head="Dampening Tam",neck="Ej Necklace",ear1="Digni. Earring",ear2="Zennaroi Earring",
+		body="Emet Harness +1",hands="Leyline Gloves",ring1="Cacoethic Ring +1",ring2="Chirich Ring",
+		back="Senuna's Mantle",waist="Kentarch Belt",legs="Samnuha Tights",feet="Meg. Jam. +1"}
+	sets.engaged.PDT = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Epona's Ring",
+		back="Shadow Mantle",waist="Patentia Sash",legs="Samnuha Tights",feet="Meg. Jam. +1"}
+	sets.engaged.Acc.PDT = {ammo="Amar Cluster",
+		head="Dampening Tam",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Dark Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Meg. Jam. +1"}
+
+	-- Custom melee group: High Haste
+	sets.engaged.HighHaste = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}
+		
+	sets.engaged.Acc.HighHaste = {
+		ammo="Amar Cluster",
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
+		hands="Meg. Gloves +2",
+		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +1",
+		neck="Subtlety Spec.",
+		ear1="Digni. Earring",ear2="Heartseeker Earring",
+		ring1="Cacoethic Ring +1",ring2="Cacoethic Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+		
+	sets.engaged.Recommend.HighHaste = {
+		ammo="Yamarang",
+		head="Adhemar Bonnet",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}
+	
+	sets.engaged.Store_TP.HighHaste = {
+		ammo="Yamarang",
+		head="Maculele Tiara",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet="Horos Toe Shoes",
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Chirich Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}--Mummu Jacket +1 
+	
+	sets.engaged.TEST_TIG.HighHaste = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+		
+	sets.engaged.Evasion.HighHaste = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Torero Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Cacoethic Ring +1",ring2="Epona's Ring",
+		back="Ik Cape",waist="Patentia Sash",legs="Samnuha Tights",feet="Horos Shoes +1"}
+	sets.engaged.Acc.Evasion.HighHaste = {ammo="Yamarang",
+		head="Dampening Tam",neck="Torero Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Cacoethic Ring +1",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Kentarch Belt",legs="Samnuha Tights",feet="Meg. Jam. +1"}
+	sets.engaged.PDT.HighHaste = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Patricius Ring",ring2="Epona's Ring",
+		back="Shadow Mantle",waist="Patentia Sash",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+	sets.engaged.Acc.PDT.HighHaste = {ammo="Amar Cluster",
+		head="Dampening Tam",neck="Twilight Torque",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Patricius Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Hurch'lan Sash",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+
+	-- Custom melee group: Max Haste
+	sets.engaged.MaxHaste = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}
+	sets.engaged.Acc.MaxHaste = {
+		ammo="Amar Cluster",
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
+		hands="Meg. Gloves +2",
+		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +1",
+		neck="Subtlety Spec.",
+		ear1="Digni. Earring",ear2="Heartseeker Earring",
+		ring1="Cacoethic Ring +1",ring2="Chirich Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+		
+	sets.engaged.Recommend.MaxHaste = {
+		ammo="Yamarang",
+		head="Adhemar Bonnet",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Windbuffet Belt +1",
+		}
+	
+	sets.engaged.Store_TP.MaxHaste = {
+		ammo="Yamarang",
+		head="Maculele Tiara",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet="Horos Toe Shoes",
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Cessance Earring",
+		ring1="Chirich Ring",ring2="Chirich Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}--Mummu Jacket +1 
+	
+	sets.engaged.TEST_TIG.MaxHaste = {
+		ammo="Yamarang",
+		head="Skormoth Mask",
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},
+		neck="Anu Torque",
+		ear1="Sherida Earring",ear2="Suppanomimi",
+		ring1="Hetairoi Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",
+		waist="Reiki Yotai",
+		}
+	
+	sets.engaged.Evasion.MaxHaste = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Torero Torque",ear2="Cessance Earring",ear1="Digni. Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Cacoethic Ring +1",ring2="Epona's Ring",
+		back="Ik Cape",waist="Windbuffet Belt +1",legs="Samnuha Tights",feet="Horos Shoes +1"}
+	sets.engaged.Acc.Evasion.MaxHaste = {ammo="Amar Cluster",
+		head="Dampening Tam",neck="Torero Torque",ear2="Cessance Earring",ear1="Digni. Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Cacoethic Ring +1",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Kentarch Belt",legs="Samnuha Tights",feet="Meg. Jam. +1"}
+	sets.engaged.PDT.MaxHaste = {ammo="Yamarang",
+		head="Meghanada Visor +2",neck="Twilight Torque",ear2="Cessance Earring",ear1="Digni. Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Patricius Ring",ring2="Epona's Ring",
+		back="Shadow Mantle",waist="Windbuffet Belt +1",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+	sets.engaged.Acc.PDT.MaxHaste = {ammo="Amar Cluster",
+		head="Dampening Tam",neck="Twilight Torque",ear2="Cessance Earring",ear1="Digni. Earring",
+		body="Emet Harness +1",hands="Meg. Gloves +2",ring1="Patricius Ring",ring2="Epona's Ring",
+		back="Senuna's Mantle",waist="Hurch'lan Sash",legs="Meg. Chausses +2",feet="Meg. Jam. +1"}
+
+
+
+	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
+	sets.buff['Saber Dance'] = {legs="Horos Tights +1"}
+	sets.buff['Fan Dance'] = {hands="Horos Bangles +1",legs="Maculele Tights"}
+	sets.buff['Climactic Flourish'] = {head="Maculele Tiara"}
+	sets.buff['Wild Flourish'] = {hands="Maculele Bangles",legs="Maxixi Tights +1",back="Senuna's Mantle"}
 end
 
 
@@ -382,6 +621,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.precast.Skillchain)
         end
     end
+	if player.tp > 2250 then
+            equip(sets.TP_Bonus)	
+		end
 end
 
 
@@ -539,7 +781,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function determine_haste_group()
-    -- We have three groups of DW in gear: Charis body, Charis neck + DW earrings, and Windbuffet Belt.
+    -- We have three groups of DW in gear: Charis body, Charis neck + DW earrings, and Patentia Sash.
 
     -- For high haste, we want to be able to drop one of the 10% groups (body, preferably).
     -- High haste buffs:
@@ -588,12 +830,12 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(3, 20)
+        set_macro_page(1, 6)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(1, 20)
+        set_macro_page(1, 6)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(2, 20)
+        set_macro_page(1, 6)
     else
-        set_macro_page(5, 20)
+        set_macro_page(1, 6)
     end
 end
