@@ -8,11 +8,13 @@ function get_sets()
     
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('organizer-lib')
 end
 
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+	state.Buff.Doomed = buffactive.doomed or false
     state.Buff.Footwork = buffactive.Footwork or false
     state.Buff.Impetus = buffactive.Impetus or false
 
@@ -62,7 +64,7 @@ function init_gear_sets()
 
 	sets.precast.JA['Chi Blast'] = {
 		head="Hizamaru Somen +1",neck="Faith Torque",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Hes. Gloves +1",ring1="Levia. Ring",ring2="Rufescent Ring",
+		body="Reiki Osode",hands="Hes. Gloves +1",ring1="Stikini Ring +1",ring2="Rufescent Ring",
 		back="Melee Cape",legs="Samnuha Tights",feet="Rawhide Boots"}
 
 	sets.precast.JA['Footwork'] = {feet="Bhikku Gaiters"}--Segomo's Mantle
@@ -74,45 +76,47 @@ function init_gear_sets()
 	sets.precast.JA['Mantra'] = {feet="Hesychast's Gaiters"}
 
 	sets.precast.JA['Chakra'] = {ammo="Tantra Tathlum",
-		head="Lilitu Headpiece",neck="Unmoving Collar +1",ear1="Soil Pearl",ear2="Soil Pearl",
+		head="Genmei Kabuto",neck="Unmoving Collar +1",ear1="Soil Pearl",ear2="Soil Pearl",
 		body="Anch. Cyclas +1",hands="Hes. Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"}
 
 	sets.precast.JA['Provoke'] = sets.enmity
     
+	sets.TP_Bonus        = {ear2="Cessance Earring"}
+	
 	-- Waltz set (chr and vit)
  sets.precast.Waltz = {ammo="Sonia's Plectrum",
-		head="Khepri Bonnet",neck="Unmoving Collar +1",ear1="Soil Pearl",ear2="Soil Pearl",
-		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},hands="Slither Gloves +1",ring1="Titan Ring",ring2="Titan Ring",
+		head="Mummu Bonnet +1",neck="Unmoving Collar +1",ear1="Soil Pearl",ear2="Soil Pearl",
+		body="Reiki Osode",hands="Slither Gloves +1",ring1="Niqmaddu Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Samnuha Tights",feet="Rawhide Boots"} --head="Lilitu Headpiece"
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
-    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
-	hands="Hizamaru Kote +1",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Hiza. Haramaki +1",neck="Subtlety Spectacles",ear1="Digni. Earring"}
+    sets.precast.Step = {head="Alhazen Hat",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Amar Cluster",ring1="Chirich Ring",ring2="Chirich Ring",
+	hands="Malignance Gloves",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1",body="Reiki Osode",neck="Subtlety Spectacles",ear1="Digni. Earring"}
     
-	sets.precast.Flourish1 = {head="Dampening Tam",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Honed Tathlum",ring1="Varar Ring",ring2="Varar Ring",
-	hands="Hes. Gloves +1",feet="Herculean Boots",body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Digni. Earring"}
+	sets.precast.Flourish1 = {head="Dampening Tam",ear2="Cessance Earring",waist="Hurch'lan Sash",back="Letalis Mantle",ammo="Amar Cluster",ring1="Chirich Ring",ring2="Chirich Ring",
+	hands="Hes. Gloves +1",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}},body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},neck="Subtlety Spectacles",ear1="Digni. Earring"}
 
 	
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Impatiens",head="Herculean Helm",neck="Voltsurge Torque",body="Taeon Tabard",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring",ring2="Prolix Ring",legs="Rawhide Trousers",
+    sets.precast.FC = {ammo="Impatiens",head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Voltsurge Torque",body="Dread Jupon",ear1="Mendi. Earring",ear2="Loquacious Earring",ring1="Weatherspoon Ring +1",ring2="Prolix Ring",legs="Rawhide Trousers",
 	hands="Leyline Gloves",back="Mujin Mantle"}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
-    sets.enmity = {ear1="Friomisi Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring"}
+    sets.enmity = {ear1="Friomisi Earring",ear2="Cryptic Earring",neck="Unmoving Collar +1",body="Emet Harness +1",hands="Kurys Gloves",waist="Warwolf Belt",ring1="Petrov Ring",ring2="Begrudging Ring",feet="Rager Ledel. +1",head="Halitus Helm"}
  
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
 		head="Hizamaru Somen +1",neck="Fotia Gorget",ear1="Sherida Earring",ear2="Moonshade Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Ifrit Ring",
+		body="Hiza. Haramaki +1",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back="Buquwik Cape",waist="Fotia Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"}--Anch. Cyclas +1
-    sets.precast.WSAcc = {ammo="Honed Tathlum",body="Hiza. Haramaki +1",back="Letalis Mantle",waist="Hurch'lan Sash",head="Hizamaru Somen +1"}
+    sets.precast.WSAcc = {ammo="Amar Cluster",body="Hiza. Haramaki +1",back="Letalis Mantle",waist="Hurch'lan Sash",head="Hizamaru Somen +1"}
     sets.precast.WSMod = {ammo="Tantra Tathlum"}
     sets.precast.MaxTP = {ear1="Sherida Earring",ear2="Moonshade Earring"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
@@ -124,9 +128,9 @@ function init_gear_sets()
 
     sets.precast.WS['Raging Fists']    = set_combine(sets.precast.WS, {})
     sets.precast.WS['Howling Fist']    = set_combine(sets.precast.WS, {legs="Samnuha Tights"})
-    sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {ear1="Sherida Earring",ear2="Moonshade Earring",ring2="Varar Ring",back="Vespid Mantle",waist="Moonbow Belt"})
+    sets.precast.WS['Asuran Fists']    = set_combine(sets.precast.WS, {ear1="Sherida Earring",ear2="Moonshade Earring",ring2="Chirich Ring",back="Vespid Mantle",waist="Moonbow Belt"})
     sets.precast.WS["Ascetic's Fury"]  = set_combine(sets.precast.WS, {
-        ammo="Tantra Tathlum",ring1="Petrov Ring",back="Buquwik Cape"})
+        ammo="Tantra Tathlum",ring1="Shukuyu Ring",back="Buquwik Cape",head="Genmei Kabuto"})
     
 	sets.precast.WS["Victory Smite"]   = set_combine(sets.precast.WS, {
 	ammo="Knobkierrie",
@@ -134,8 +138,8 @@ function init_gear_sets()
 	waist="Moonbow Belt",
 	ear1="Sherida Earring",
 	ear2="Moonshade Earring",
-	ring1="Begrudging Ring",
-	ring2="Epona's Ring",
+	ring2="Begrudging Ring",
+	ring1="Niqmaddu Ring",
 	back="Rancorous Mantle",
 	head="Rao Kabuto",
 	body="Hiza. Haramaki +1",
@@ -145,7 +149,7 @@ function init_gear_sets()
 	
 	--Rancorous Mantle/Justiciar's Torque})--neck="Rancor Collar/Rufescent Ring/Ifrit Ring
     sets.precast.WS['Shijin Spiral']   = set_combine(sets.precast.WS, {neck="Fotia Gorget",back="Vespid Mantle",waist="Moonbow Belt",ring2="Epona's Ring",ring1="Ramuh Ring",
-	body="Naga Samue",hands="Rawhide Gloves",head="Hizamaru Somen +1",ammo="Falcon Eye",legs="Samnuha Tights",feet="Rawhide Boots"})
+	body="Naga Samue",hands="Malignance Gloves",head="Hizamaru Somen +1",ammo="Falcon Eye",legs="Samnuha Tights",feet="Rawhide Boots"})
 	--body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}}
     sets.precast.WS['Dragon Kick']     = set_combine(sets.precast.WS, {})
     sets.precast.WS['Tornado Kick']    = set_combine(sets.precast.WS, {ammo="Tantra Tathlum"})
@@ -173,19 +177,19 @@ function init_gear_sets()
     sets.precast.WS['Cataclysm'] = {
         head="Dampening Tam",neck="Fotia Gorget",ear1="Friomisi Earring",ear2="Hecate's Earring",
         body="Samnuha Coat",hands="Leyline Gloves",ring1="Fenrir Ring",ring2="Epona's Ring",
-        back="Toro Cape",waist="Fotia Belt",legs="Samnuha Tights",feet="Herculean Boots"}
+        back="Toro Cape",waist="Fotia Belt",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
     
     
     -- Midcast Sets
     sets.midcast.FastRecast = {ammo="Impatiens",
-		head="Herculean Helm",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
-		body="Taeon Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",legs="Rawhide Trousers",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Voltsurge Torque",
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Weatherspoon Ring +1",ring2="Prolix Ring",back="Mujin Mantle",legs="Rawhide Trousers",
 		waist="Moonbow Belt",feet="Rawhide Boots"}
         
     -- Specific spells
     sets.midcast.Utsusemi = {ammo="Impatiens",
-		head="Herculean Helm",ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Magoraga Beads",
-		body="Taeon Tabard",hands="Leyline Gloves",ring1="Weatherspoon Ring",ring2="Prolix Ring",back="Mujin Mantle",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},ear1="Mendi. Earring",ear2="Loquacious Earring",neck="Magoraga Beads",
+		body="Dread Jupon",hands="Leyline Gloves",ring1="Weatherspoon Ring +1",ring2="Prolix Ring",back="Mujin Mantle",
 		waist="Moonbow Belt",legs="Rawhide Trousers",feet="Rawhide Boots"}
 
     
@@ -209,39 +213,39 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {ammo="Ginsen",
 		head="Rao Kabuto",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Dark Ring",ring2="Defending Ring",
 		back="Solemnity Cape",waist="Moonbow Belt",legs="Rao Haidate",feet="Hermes' Sandals"}--Infused Earring
 
     sets.idle.Town = {main="Denouements",ammo="Ginsen",
 		head="Rao Kabuto",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Dark Ring",ring2="Defending Ring",
 		back="Solemnity Cape",waist="Moonbow Belt",legs="Rao Haidate",feet="Hermes' Sandals"}
     
     sets.idle.Weak = {ammo="Ginsen",
 		head="Rao Kabuto",neck="Sanctity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Hiza. Haramaki +1",hands="Rao Kote",ring1="Dark Ring",ring2="Defending Ring",
 		back="Solemnity Cape",waist="Moonbow Belt",legs="Rao Haidate",feet="Hermes' Sandals"}
     
     -- Defense sets
     sets.defense.PDT = {ammo="Staunch Tathlum",
-		head="Herculean Helm",neck="Twilight Torque",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Solemnity Cape",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Twilight Torque",ear1="Sherida Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Malignance Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Moonbow Belt",legs="Malignance Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 
     sets.defense.HP = {ammo="Tantra Tathlum",
-		head="Herculean Helm",neck="Twilight Torque",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Bleating Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Twilight Torque",
+		body="Emet Harness +1",hands="Malignance Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Bleating Mantle",waist="Moonbow Belt",legs="Malignance Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 
 	sets.defense.EVASION = {ammo="Tantra Tathlum",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Letalis Mantle",waist="Moonbow Belt",legs="Hizamaru Hizayoroi +1",feet="Hizamaru Sune-Ate +1"}		
+		body="Hiza. Haramaki +1",hands="Malignance Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		back="Letalis Mantle",waist="Moonbow Belt",legs="Malignance Tights",feet="Hizamaru Sune-Ate +1"}		
 		
     sets.defense.MDT = {ammo="Staunch Tathlum",
 		head="Skormoth Mask",neck="Twilight Torque",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Solemnity Cape",waist="Moonbow Belt",legs="Ta'lab Trousers",feet="Herculean Boots"}
+		body="Emet Harness +1",hands="Malignance Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Moonbow Belt",legs="Malignance Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 
     sets.Kiting = {feet="Hermes' Sandals"}
 
@@ -257,66 +261,66 @@ function init_gear_sets()
     -- Normal melee sets
     sets.engaged = {ammo="Ginsen",
 		head="Skormoth Mask",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Adhemar Jacket",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Bleating Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}
+		body="Adhemar Jacket",hands={ name="Herculean Gloves", augments={'Attack+18','"Triple Atk."+3','Accuracy+11',}},ring1="Niqmaddu Ring",ring2="Epona's Ring",
+		back="Bleating Mantle",waist="Moonbow Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
     sets.engaged.SomeAcc = {ammo="Amar Cluster",
 		head="Adhemar Bonnet",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Anch. Cyclas +1",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Varar Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Herculean Boots"}
-    sets.engaged.Acc = {ammo="Honed Tathlum",
+		body="Anch. Cyclas +1",hands="Adhemar Wristbands",ring1="Niqmaddu Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
+    sets.engaged.Acc = {ammo="Amar Cluster",
 		head="Hizamaru Somen +1",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Cacoethic Ring +1",ring2="Varar Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"}
+		body="Reiki Osode",hands="Malignance Gloves",ring1="Cacoethic Ring +1",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Malignance Tights",feet="Hiza. Sune-Ate +1"}
 		--Alhazen Hat
 		--Amar Cluster
 	sets.engaged.Special = {ammo="Ginsen",
 		head="Skormoth Mask",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Bhikku Cyclas",hands="Bhikku Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Bleating Mantle",waist="Moonbow Belt",legs="Bhikku Hose",feet="Herculean Boots"}
+		body="Bhikku Cyclas",hands="Bhikku Gloves",ring1="Niqmaddu Ring",ring2="Epona's Ring",
+		back="Bleating Mantle",waist="Moonbow Belt",legs="Bhikku Hose",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 	sets.engaged.Hizamaru = {ammo="Ginsen",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
+		body="Hiza. Haramaki +1",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back="Bleating Mantle",waist="Moonbow Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-ate +1"}
     sets.engaged.Mod = {ammo="Ginsen",
 		head="Adhemar Bonnet",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Adhemar Jacket",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
-		back="Letalis Mantle",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}
+		body="Adhemar Jacket",hands={ name="Herculean Gloves", augments={'Attack+18','"Triple Atk."+3','Accuracy+11',}},ring1="Niqmaddu Ring",ring2="Epona's Ring",
+		back="Letalis Mantle",waist="Moonbow Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 
     -- Defensive melee hybrid sets
     sets.engaged.PDT = {ammo="Ginsen",
-		head="Herculean Helm",neck="Twilight Torque",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Emet Harness +1",hands="Herculean Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Solemnity Cape",waist="Moonbow Belt",legs="Herculean Trousers",feet="Herculean Boots"}
-    sets.engaged.SomeAcc.PDT = {ammo="Honed Tathlum",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Twilight Torque",ear1="Sherida Earring",ear2="Cessance Earring",
+		body="Emet Harness +1",hands="Malignance Gloves",ring1="Dark Ring",ring2="Defending Ring",
+		back="Solemnity Cape",waist="Moonbow Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
+    sets.engaged.SomeAcc.PDT = {ammo="Amar Cluster",
 		head="Dampening Tam",neck="Twilight Torque",ear1="Digni. Earring",ear2="Heartseeker Earring",
 		body="Emet Harness +1",hands="Taeon Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Herculean Boots"}
-    sets.engaged.Acc.PDT = {ammo="Honed Tathlum",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
+    sets.engaged.Acc.PDT = {ammo="Amar Cluster",
 		head="Dampening Tam",neck="Twilight Torque",ear1="Digni. Earring",ear2="Heartseeker Earring",
 		body="Emet Harness +1",hands="Taeon Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Herculean Boots"}
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
     sets.engaged.EVASION = {ammo="Ginsen",
 		head="Hizamaru Somen +1",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Hiza. Haramaki +1",hands="Hizamaru Kote +1",ring1="Petrov Ring",ring2="Epona's Ring",
+		body="Hiza. Haramaki +1",hands="Malignance Gloves",ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back="Letalis Mantle",waist="Moonbow Belt",legs="Hiza. Hizayoroi +1",feet="Hiza. Sune-Ate +1"}
-	sets.engaged.SomeAcc.EVASION = {ammo="Honed Tathlum",
+	sets.engaged.SomeAcc.EVASION = {ammo="Amar Cluster",
 		head="Dampening Tam",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Petrov Ring",ring2="Varar Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Herculean Boots"}
-	sets.engaged.Acc.EVASION = {ammo="Honed Tathlum",
+		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Niqmaddu Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
+	sets.engaged.Acc.EVASION = {ammo="Amar Cluster",
 		head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Varar Ring",ring2="Varar Ring",
-		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet="Herculean Boots"}
+		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Chirich Ring",ring2="Chirich Ring",
+		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Samnuha Tights",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 	sets.engaged.Counter = {ammo="Amar Cluster",
-		head="Herculean Helm",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Otro. Harness +1",hands="Herculean Gloves",ring1="Petrov Ring",ring2="Epona's Ring",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cryptic Earring",
+		body="Reiki Osode",hands={ name="Herculean Gloves", augments={'Attack+18','"Triple Atk."+3','Accuracy+11',}},ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back={ name="Anchoret's Mantle", augments={'STR+1','DEX+3','"Subtle Blow"+4','"Counter"+5',}},
 		waist="Moonbow Belt",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}
-    sets.engaged.Acc.Counter = {ammo="Honed Tathlum",
+    sets.engaged.Acc.Counter = {ammo="Amar Cluster",
 		head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Otro. Harness +1",hands="Hes. Gloves +1",ring1="Varar Ring",ring2="Varar Ring",
+		body="Reiki Osode",hands="Hes. Gloves +1",ring1="Chirich Ring",ring2="Chirich Ring",
 		back={ name="Anchoret's Mantle", augments={'STR+1','DEX+3','"Subtle Blow"+4','"Counter"+5',}},
-		waist="Hurch'lan Sash",legs="Ta'lab Trousers",feet="Herculean Boots"}
+		waist="Hurch'lan Sash",legs="Ta'lab Trousers",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
 
 
     -- Hundred Fists/Impetus melee set mods
@@ -332,17 +336,19 @@ function init_gear_sets()
 
     -- Footwork combat form
     sets.engaged.Footwork = {ammo="Ginsen",
-		head="Herculean Helm",neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
-		body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Petrov Ring",ring2="Epona's Ring",
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Asperity Necklace",ear1="Sherida Earring",ear2="Cessance Earring",
+		body="Adhemar Jacket",hands="Adhemar Wristbands",ring1="Niqmaddu Ring",ring2="Epona's Ring",
 		back="Bleating Mantle",waist="Moonbow Belt",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}--Segomo's Mantle
-    sets.engaged.Footwork.Acc = {ammo="Honed Tathlum",
+    sets.engaged.Footwork.Acc = {ammo="Amar Cluster",
 		head="Alhazen Hat",neck="Subtlety Spectacles",ear1="Digni. Earring",ear2="Heartseeker Earring",
-		body="Emet Harness +1",hands="Hes. Gloves +1",ring1="Varar Ring",ring2="Varar Ring",
+		body="Reiki Osode",hands="Hes. Gloves +1",ring1="Chirich Ring",ring2="Chirich Ring",
 		back="Letalis Mantle",waist="Hurch'lan Sash",legs="Ta'lab Trousers",feet="Soku. Sune-Ate"}--Segomo's Mantle
         
     -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
     sets.impetus_body = {body="Bhikku Cyclas"}
     sets.footwork_kick_feet = {feet="Anchorite's Gaiters"}
+	sets.buff.Doomed = {ring2="Saida Ring",waist="Gishdubar Sash"}
+	sets.Boostlock = {}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -374,6 +380,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if player.tp == 3000 then
             equip(sets.precast.MaxTP)
         end
+		if player.tp > 2750 then
+            equip(sets.TP_Bonus)	
+		end
     end
 end
 
@@ -417,6 +426,16 @@ function job_buff_change(buff, gain)
     if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" then
         handle_equipping_gear(player.status)
     end
+	
+		--Boost lock
+	if buff == 'Boost' then
+		if gain then
+			equip(sets.Boostlock)
+			disable('waist')
+		else
+			enable('waist')
+		end
+	end
 end
 
 
