@@ -65,12 +65,12 @@ function init_gear_sets()
     -- CureMelee spell map should default back to Healing Magic.
     
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Briault"}
+    sets.precast.JA.Benediction = {body="Piety Bliault"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
 		head="Nahtirah Hat",neck="Unmoving Collar +1",ear2="Roundel Earring",ear1="Soil Pearl",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Titan Ring",ring2="Titan Ring",
+		body="Ebers Bliaut",hands="Fanatic Gloves",ring1="Titan Ring",ring2="Titan Ring",
 		back="Iximulew Cape",waist="Warwolf Belt",legs="Lengo Pants",feet="Gendewitha Galoshes"}
     
     
@@ -149,7 +149,7 @@ function init_gear_sets()
 
     sets.midcast.Cursna = set_combine(sets.precast.FastRecast,    {main="Beneficus",ammo="Impatiens",
 		head="Ebers Cap",neck="Malison Medallion",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Ephedra Ring",
+		body="Ebers Bliaut",hands="Fanatic Gloves",ring1="Ephedra Ring",ring2="Ephedra Ring",
 		back="Alaunus's Cape",waist="Witful Belt",legs="Theo. Pant. +1",feet="Gendewitha Galoshes"})--Theo. Pant. +1 / 	Theo. Pantaloons
 
     sets.midcast.StatusRemoval = set_combine(sets.precast.FastRecast,    {ammo="Impatiens",back="Mending Cape",neck="Voltsurge Torque",hands="Fanatic Gloves",feet="Regal Pumps +1",
@@ -162,7 +162,7 @@ function init_gear_sets()
 
     sets.midcast.Stoneskin = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",
 		head="Umuthi Hat",neck="Nodens Gorget",ear2="Loquacious Earring",ear1="Earthcry Earring",
-		body="Ebers Bliaud",hands="Fanatic Gloves",ring2="Kishar Ring",
+		body="Ebers Bliaut",hands="Fanatic Gloves",ring2="Kishar Ring",
 		back="Ogapepo Cape",waist="Siegel Sash",legs="Haven Hose",feet="Regal Pumps +1"})
 
     sets.midcast.Auspice = set_combine(sets.precast.FastRecast,   {ammo="Impatiens",hands="Fanatic Gloves",ear1="Mendi. Earring",ear2="Loquacious Earring",feet="Ebers Duckbills",
@@ -170,7 +170,7 @@ function init_gear_sets()
 
     sets.midcast.BarElement = set_combine(sets.precast.FastRecast,    {main="Beneficus",ammo="Impatiens",
 		head="Ebers Cap",neck="Incanter's Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
-		body="Ebers Bliaud",hands="Ebers Mitts",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		body="Ebers Bliaut",hands="Ebers Mitts",ring1="Weatherspoon Ring",ring2="Kishar Ring",
 		back="Ogapepo Cape",waist="Siegel Sash",legs="Ebers Pantaloons",feet="Ebers Duckbills"})
 
     sets.midcast.Regen = set_combine(sets.precast.Cure,    {main="Bolelabunga",ammo="Impatiens",
@@ -254,29 +254,29 @@ function init_gear_sets()
 	
     -- Resting sets
     sets.resting = {ammo="Homiliary",
-		head="Befouled Crown",neck="Twilight Torque",body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		head="Befouled Crown",neck="Twilight Torque",body="Ebers Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		waist="Fucho-No-Obi",legs="Nares Trews",feet="Serpentes Sabots"}--refresh head soon.
     
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Ebers Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
 
     sets.idle.PDT = {main="Rubicundity",ammo="Homiliary",
 		head="Wivre Hairpin",neck="Twilight Torque",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Ebers Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Witful Belt",legs="Assiduity Pants +1",feet="Serpentes Sabots"}
 
     sets.idle.Town = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Ebers Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}--Sors Shield
     
     sets.idle.Weak = {main="Bolelabunga",sub="Culminus",ammo="Homiliary",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Mendi. Earring",ear2="Glorious Earring",
-		body="Ebers Bliaud",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Ebers Bliaut",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
     
     -- Defense sets
