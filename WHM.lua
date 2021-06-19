@@ -44,7 +44,7 @@ function init_gear_sets()
 		head="Nahtirah Hat",neck="Voltsurge Torque",ear1="Mendi. Earring",ear2="Loquacious Earring",
 		body="Chironic Doublet",hands="Fanatic Gloves",ring1="Weatherspoon Ring",ring2="Kishar Ring",
 		back="Ogapepo Cape",waist="Witful Belt",legs="Lengo Pants",feet="Regal Pumps +1",
-	} --Nahtirah Hat
+	}
         
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash",feet="Regal Pumps +1"})
 
