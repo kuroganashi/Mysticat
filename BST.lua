@@ -23,6 +23,7 @@ function get_sets()
    
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+	include('organizer-lib')
 end
  
 function job_setup()
