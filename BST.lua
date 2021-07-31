@@ -678,7 +678,7 @@ function init_gear_sets()
 		ring1="Hetairoi Ring",
 		ring2="Epona's Ring",
         back="Letalis Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Meg. Chausses +2",
 		feet="Loyalist Sabatons",
 	}--Loyalist Sabatons/Mes'yohi Haubergeon/Patentia Sash/Felistris Mask
@@ -813,7 +813,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
         back="Artio's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Meg. Chausses +2",
 		feet="Loyalist Sabatons",
 	}--Loyalist Sabatons

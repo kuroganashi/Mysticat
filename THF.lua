@@ -381,7 +381,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Per. Lucky Egg",
 		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
 		body="Adhemar Jacket",hands="Plun. Armlets +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Sarissapho Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet="Skulk. Poulaines +1"}--Skulker's Bonnet
+		back="Canny Cape",waist="Sarissapho. Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet="Skulk. Poulaines +1"}--Skulker's Bonnet
 	sets.engaged.TH = {ammo="Per. Lucky Egg",
 		head="White Rarab Cap +1",neck="Erudit. Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
 		body="Adhemar Jacket",hands="Plun. Armlets +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
@@ -395,7 +395,7 @@ function init_gear_sets()
     sets.engaged.DD = {ammo="Yamarang",
 		head="Skormoth Mask",neck="Erudit. Necklace",ear1="Sherida Earring",ear2="Suppanomimi",
 		body="Adhemar Jacket",hands={ name="Herculean Gloves", augments={'Attack+18','"Triple Atk."+3','Accuracy+11',}},ring1="Hetairoi Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Sarissapho Belt",legs="Meg. Chausses +2",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}--Skulker's Bonnet
+		back="Canny Cape",waist="Sarissapho. Belt",legs="Meg. Chausses +2",feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}--Skulker's Bonnet
 
     -- Mod set for trivial mobs (Thaumas)--Skulker's Bonnet
     sets.engaged.Mod2 = {ammo="Amar Cluster",
@@ -415,7 +415,7 @@ function init_gear_sets()
     sets.engaged.PDT = {
 		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','"Triple Atk."+4','STR+4','Attack+6',}},neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Telos Earring",
 		body="Emet Harness +1",hands="Malignance Gloves",ring1="Dark Ring",ring2="Defending Ring",
-		back="Iximulew Cape",waist="Sarissapho Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
+		back="Iximulew Cape",waist="Sarissapho. Belt",legs={ name="Herculean Trousers", augments={'Accuracy+17','"Triple Atk."+3','STR+5',}},feet={ name="Herculean Boots", augments={'"Triple Atk."+4','STR+6',}}}
     sets.engaged.Acc.PDT = {
 		head="Dampening Tam",neck="Loricate Torque +1",ear1="Digni. Earring",ear2="Telos Earring",
 		body="Samnuha Coat",hands="Floral Gauntlets",ring1="Dark Ring",ring2="Defending Ring",

@@ -109,7 +109,7 @@ function init_gear_sets()
 		ring2="Cacoethic Ring",
 		ear2="Telos Earring",                              
 		ear1="Digni. Earring",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 	
     -- Don't need any special gear for Healing Waltz.
@@ -160,7 +160,7 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		ring1="Petrov Ring",
 		ring2="Hetairoi Ring",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		back="Letalis Mantle",
 	}
 
@@ -618,7 +618,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Hetairoi Ring",
 		back="Letalis Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Malignance Tights",
 		feet="Aya. Gambieras +1",
 	}--Pya'ekue Belt

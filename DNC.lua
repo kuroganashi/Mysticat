@@ -152,7 +152,7 @@ function init_gear_sets()
 		ring2="Cacoethic Ring",
 		ear2="Telos Earring",                              
 		ear1="Digni. Earring",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		back="Senuna's Mantle",
 	}
 	
@@ -164,7 +164,7 @@ function init_gear_sets()
 	--Flourish
 	sets.precast.Flourish1 = {
 		ammo="Amar Cluster",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		back="Senuna's Mantle",
 		ring1="Cacoethic Ring +1",
 		ring2="Cacoethic Ring",
@@ -194,7 +194,7 @@ function init_gear_sets()
 		ear2="Telos Earring",                              
 		ear1="Digni. Earring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Malignance Tights",
 		feet="Meg. Jam. +1",
 	}) -- acc gear (Senuna's Mantle)
@@ -218,7 +218,7 @@ function init_gear_sets()
 	--Flourish3
 	sets.precast.Flourish3 = {
 		ammo="Amar Cluster",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		back="Senuna's Mantle",
 		ring1="Cacoethic Ring +1",
 		ring2="Cacoethic Ring",
@@ -576,7 +576,7 @@ function init_gear_sets()
 		ring1="Hetairoi Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}--3679.937
 		
 	sets.engaged.Acc = {
@@ -608,7 +608,7 @@ function init_gear_sets()
 		ring1="Chirich Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 	
 	sets.engaged.Store_TP = {
@@ -655,7 +655,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Samnuha Tights",
 		feet="Horos Shoes +1",
 	}
@@ -719,7 +719,7 @@ function init_gear_sets()
 		ring1="Hetairoi Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 		
 	sets.engaged.Acc.HighHaste = {
@@ -751,7 +751,7 @@ function init_gear_sets()
 		ring1="Chirich Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 	
 	sets.engaged.Store_TP.HighHaste = {
@@ -797,7 +797,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Samnuha Tights",
 		feet="Horos Shoes +1",
 	}
@@ -861,7 +861,7 @@ function init_gear_sets()
 		ring1="Hetairoi Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 	sets.engaged.Acc.MaxHaste = {
 		ammo="Amar Cluster",
@@ -892,7 +892,7 @@ function init_gear_sets()
 		ring1="Chirich Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 	}
 	
 	sets.engaged.Store_TP.MaxHaste = {
@@ -938,7 +938,7 @@ function init_gear_sets()
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
 		back="Senuna's Mantle",
-		waist="Sarissapho Belt",
+		waist="Sarissapho. Belt",
 		legs="Samnuha Tights",
 		feet="Horos Shoes +1",
 	}
