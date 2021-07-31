@@ -211,7 +211,7 @@ function init_gear_sets()
  
     -- STEPS
     sets.precast.Step = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
         head="Alhazen Hat +1",
 		neck="Subtlety Spec.",
 		ear1="Digni. Earring",
@@ -267,7 +267,7 @@ function init_gear_sets()
 	}--Vespid Mantle/Lilitu Headgear/Letalis Mantle/Vatic Byrnie
  
     sets.precast.WS.WSAcc = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
         head="Meghanada Visor +2",
 		neck="Subtlety Spec.",
 		ear1="Digni. Earring",
@@ -668,7 +668,7 @@ function init_gear_sets()
     --------------------------------------
  
     sets.engaged = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
         head="Skormoth Mask",
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
@@ -803,7 +803,7 @@ function init_gear_sets()
  
     -- MORE EXAMPLE SETS WITH EXPANDED COMBAT FORMS
     sets.engaged.DW = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
         head="Skormoth Mask",
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
@@ -818,7 +818,7 @@ function init_gear_sets()
 		feet="Loyalist Sabatons",
 	}--Loyalist Sabatons
     sets.engaged.DW.Acc = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
         head="Meghanada Visor +2",
 		neck="Subtlety Spec.",
 		ear1="Digni. Earring",

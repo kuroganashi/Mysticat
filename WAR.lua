@@ -1333,7 +1333,7 @@ function init_gear_sets()
  
      -- Engaged set, assumes Chango
     sets.engaged = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1363,7 +1363,7 @@ function init_gear_sets()
 		--Total: DA+58 (+23)=(DA+81) TA+5 QA+3%
 		--TOTAL ACC: 1,211 ~~~~~> 1,224
 	 
-	sets.engaged.Bad_Ass_Set = {ammo="Ginsen",
+	sets.engaged.Bad_Ass_Set = {ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
@@ -1419,7 +1419,7 @@ function init_gear_sets()
 	]]
 	
 	sets.engaged.Test2 = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1453,7 +1453,7 @@ function init_gear_sets()
 		
 	
 	sets.engaged.Test1 = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1470,7 +1470,7 @@ function init_gear_sets()
 	
 	
 	sets.engaged.DA = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1487,7 +1487,7 @@ function init_gear_sets()
 		
 	
      sets.engaged.Mid = set_combine(sets.engaged, {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1503,7 +1503,7 @@ function init_gear_sets()
 	})--Boii Mask 
 	
 	sets.engaged.Store_TP = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1539,7 +1539,7 @@ function init_gear_sets()
 	})
     
 	sets.engaged.DW.DA = set_combine(sets.engaged.Mid,  {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Dudgeon Earring",
@@ -1582,7 +1582,7 @@ function init_gear_sets()
     sets.engaged.GreatSword = set_combine(sets.engaged, {})
      
 	sets.engaged.GreatSword.DA = set_combine(sets.engaged.Mid, {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Flam. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -1600,7 +1600,7 @@ function init_gear_sets()
 	sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
 	 
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Pummeler's Mask +2",
 		neck="Subtlety Spectacles",
 		ear1="Telos Earring",                              

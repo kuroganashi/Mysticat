@@ -135,7 +135,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Aya. Zucchetto +2",
 		body="Ayanmo Corazza +2",
 		hands="Malignance Gloves",
@@ -152,7 +152,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
 		head="Atrophy Chapeau +1",
@@ -440,7 +440,7 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Befouled Crown",
 		neck="Sanctity Necklace",
 		ear2="Malignance Earring",
@@ -594,7 +594,7 @@ function init_gear_sets()
 	
     -- Normal melee group
     sets.engaged = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Aya. Zucchetto +2",
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
@@ -610,7 +610,7 @@ function init_gear_sets()
 	}--Pya'ekue Belt
 
 	sets.engaged.Acc = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Alhazen Hat +1",
 		neck="Subtlety Spectacles",
 		ear1="Sherida Earring",
