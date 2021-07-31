@@ -12,6 +12,20 @@ function get_sets()
 	include('organizer-lib')
 end
 
+ 
+organizer_items = {
+    --echos="Echo Drops",
+    --shihei="Shihei",
+	--tools1="Inoshishinofuda",
+    --tools2="Chonofuda",
+    --tools3="Shikanofuda",
+	--tools4="Sanjaku-Tenugui",
+	--tools5="Shinobi-Tabi",
+	Sword1="Naegling",
+	--Polearm1="Kaja Lance",
+	--Shield1="Blurred Shield +1",
+	--orb="Macrocosmic Orb",
+} 
 
 -- Setup vars that are user-independent.
 function job_setup()
