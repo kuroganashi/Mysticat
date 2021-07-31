@@ -66,13 +66,11 @@ organizer_items = {
     --tools3="Shikanofuda",
 	--tools4="Sanjaku-Tenugui",
 	--tools5="Shinobi-Tabi",
-	reraisehead="White Rarab Cap +1",
 	Sword1="Naegling",
 	Polearm1="Kaja Lance",
 	Shield1="Blurred Shield +1",
 	--orb="Macrocosmic Orb",
 } 
-
        
 -- Define sets and vars used by this job file.
 function init_gear_sets()

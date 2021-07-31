@@ -77,7 +77,7 @@ function init_gear_sets()
 
     sets.precast.FC = {ammo="Impatiens",
         head="Nahtirah Hat",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",neck="Voltsurge Torque",
-        body="Vrikodara Jupon",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+        body="Vrikodara Jupon",ring1="Weatherspoon Ring +1",ring2="Kishar Ring",
 		back="Ogapepo Cape",legs="Psycloth Lappas",feet="Regal Pumps +1"}--Swith Cape
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -98,71 +98,71 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Vidohunir'] = {ammo="Pemphredo Tathlum",
         head="Jhakri Coronal +1",neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Barkarole Earring",
-        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+        body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
         back="Taranus's Cape",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}
     
 		sets.precast.WS['Myrkr'] = {ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Evans Earring",
-		body="Witching Robe",hands="Telchine Gloves",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Witching Robe",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Pahtli Cape",waist="Fucho-No-Obi",legs="Psycloth Lappas",feet="Medium's Sabots"}
 
 		sets.precast.WS['Shattersoul'] = {ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Petrov Ring",ring2="Fenrir Ring +1",back="Taranus's Cape",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}--80% INT Base
+		head="Jhakri Coronal +1",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Petrov Ring",ring2="Stikini Ring +1",back="Taranus's Cape",waist="Fotia Belt",legs="Jhakri Slops +1",feet="Jhakri Pigaches +1"}--80% INT Base
 		
     
     ---- Midcast Sets ----
 
     sets.midcast.FastRecast = {ammo="Impatiens",
         head="Nahtirah Hat",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",neck="Voltsurge Torque",
-        body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+        body="Vrikodara Jupon",hands="Telchine Gloves",ring1="Weatherspoon Ring +1",ring2="Kishar Ring",
 		back="Swith Cape",waist="Witful Belt",legs="Psycloth Lappas",feet="Regal Pumps +1"}
 
     sets.midcast.Cure = {main="Serenity",ammo="Impatiens",
 		head="Nahtirah Hat",neck="Incanter's Torque",ear2="Roundel Earring",ear1="Mendi. Earring",
-		body="Heka's Kalasiris",hands="Telchine Gloves",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+		body="Heka's Kalasiris",hands="Telchine Gloves",ring1="Weatherspoon Ring +1",ring2="Kishar Ring",
 		back="Pahtli Cape",waist="Witful Belt",legs="Nares Trews",feet="Medium's Sabots"}
 
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast['Enhancing Magic'] = {main="Serenity",
 		neck="Incanter's Torque",head="Umuthi Hat",
-		body="Vrikodara Jupon",hands="Jhakri Cuffs +1",ring1="Weatherspoon Ring",ring2="Kishar Ring",back="Ogapepo Cape",
+		body="Vrikodara Jupon",hands="Jhakri Cuffs +1",ring1="Weatherspoon Ring +1",ring2="Kishar Ring",back="Ogapepo Cape",
 		legs="Psycloth Lappas"}
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash",ear1="Earthcry Earring",hands="Carapacho Cuffs",head="Umuthi Hat"})--legs="Haven Hose"
 
     sets.midcast['Enfeebling Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Gwati Earring",
-		body="Ischemia Chasu.",hands="Jhakri Cuffs +1",ring1="Fenrir Ring +1",ring2="Stikini Ring",
+		body="Ischemia Chasu.",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+10','Mag. Acc.+11','"Mag.Atk.Bns."+6',}}}
         
     sets.midcast.ElementalEnfeeble = sets.midcast['Enfeebling Magic']
 
     sets.midcast['Dark Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Gwati Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Fenrir Ring +1",ring2="Stikini Ring",
+		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+10','Mag. Acc.+11','"Mag.Atk.Bns."+6',}}}
 
     sets.midcast.Drain = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Gwati Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Fenrir Ring +1",ring2="Stikini Ring",
+		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Fucho-No-Obi",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+10','Mag. Acc.+11','"Mag.Atk.Bns."+6',}}}
     
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Stun = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Gwati Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring",ring2="Kishar Ring",
+		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Kishar Ring",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+10','Mag. Acc.+11','"Mag.Atk.Bns."+6',}}}
 
 	sets.midcast.Death = {ammo="Pemphredo Tathlum",
 		head="Nahtirah Hat",neck="Sanctity Necklace",ear1="Gifted Earring",ear2="Evans Earring",
-		body="Witching Robe",hands="Telchine Gloves",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Witching Robe",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Pahtli Cape",waist="Fucho-No-Obi",legs="Psycloth Lappas",feet="Medium's Sabots"}	
 		
     sets.midcast.BardSong = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Digni. Earring",ear2="Gwati Earring",
-		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring",ring2="Stikini Ring",
+		body="Jhakri Robe +2",hands="Jhakri Cuffs +1",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Magic burst dmg.+7%','CHR+10','Mag. Acc.+11','"Mag.Atk.Bns."+6',}}}
 
 
@@ -170,12 +170,12 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-		body="Jhakri Robe +2",hands="Amalric Gages",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Jhakri Robe +2",hands="Amalric Gages",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'CHR+9','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}}
 
     sets.midcast['Elemental Magic'].Resistant = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-		body="Jhakri Robe +2",hands="Amalric Gages",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Jhakri Robe +2",hands="Amalric Gages",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'CHR+9','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}}--Bane Cape
 
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Niobid Strap"})
@@ -184,19 +184,19 @@ function init_gear_sets()
 	--MP Back
 	sets.midcast['Elemental Magic'].MP_Back = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-		body="Spae. Coat +1",hands="Amalric Gages",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Spae. Coat +1",hands="Amalric Gages",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'CHR+9','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}}
 	
 	sets.midcast['Elemental Magic'].HighTierNuke.MP_Back = set_combine(sets.midcast['Elemental Magic'], {
 		main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Merlinic Hood",neck="Sanctity Necklace",ear1="Barkarole Earring",ear2="Friomisi Earring",
-		body="Spae. Coat +1",hands="Amalric Gages",ring1="Fenrir Ring +1",ring2="Fenrir Ring +1",
+		body="Spae. Coat +1",hands="Amalric Gages",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Taranus's Cape",waist="Refoccilation Stone",legs="Merlinic Shalwar",feet={ name="Merlinic Crackows", augments={'CHR+9','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}})
 
     -- Minimal damage gear for procs.
     sets.midcast['Elemental Magic'].Proc = {main="Lathi", sub="Niobid Strap",ammo="Impatiens",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Barkarole Earring",ear2="Loquacious Earring",
-        body="Vrikodara Jupon",hands="Serpentes Cuffs",ring1="Weatherspoon Ring",ring2="Kishar Ring",
+        body="Vrikodara Jupon",hands="Serpentes Cuffs",ring1="Weatherspoon Ring +1",ring2="Kishar Ring",
         back="Swith Cape",waist="Witful Belt",legs="Nares Trews",feet="Regal Pumps +1"}
 
 
@@ -220,7 +220,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {main="Chatoyant Staff",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Serpentes Sabots"}
     
 
@@ -229,7 +229,7 @@ function init_gear_sets()
     -- Normal refresh idle set
     sets.idle = {main="Lathi", sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
@@ -248,7 +248,7 @@ function init_gear_sets()
     -- Town gear.
     sets.idle.Town = {main="Lathi",sub="Niobid Strap",ammo="Pemphredo Tathlum",
 		head="Befouled Crown",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Loquacious Earring",
-		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Matrimony Band",ring2="Defending Ring",
+		body="Jhakri Robe +2",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Defending Ring",
 		back="Umbra Cape",waist="Fucho-No-Obi",legs="Assiduity Pants +1",feet="Herald's Gaiters"}
         
     -- Defense sets
