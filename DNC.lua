@@ -265,7 +265,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		ammo="Yamarang",
+		ammo="C. Palug Stone",
 		head="Meghanada Visor +2",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
@@ -289,7 +289,7 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-	ammo="Yamarang",
+	ammo="C. Palug Stone",
 	head="Meghanada Visor +2",
 	body="Meg. Cuirie +2",
 	hands="Meg. Gloves +2",
@@ -313,7 +313,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-		ammo="Yamarang",
+		ammo="C. Palug Stone",
 		head="Meghanada Visor +2",
 		body={ name="Herculean Vest", augments={'Accuracy+18','"Triple Atk."+2','STR+10','Attack+6',}},
 		hands="Meg. Gloves +2",
@@ -339,7 +339,7 @@ function init_gear_sets()
 		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
-		ammo="Amar Cluster",
+		ammo="C. Palug Stone",
 		back="Senuna's Mantle",
 	})
 	sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {
@@ -348,7 +348,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-		ammo="Charis Feather",
+		ammo="C. Palug Stone",
 		head="Adhemar Bonnet",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
@@ -364,7 +364,7 @@ function init_gear_sets()
 	})--Lustra Feet A(19,741) / Lustra Feet B(20,007) / Lustra Feet D(20,197)
 
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
-		ammo="Yamarang",
+		ammo="C. Palug Stone",
 		back="Senuna's Mantle",
 	})
 

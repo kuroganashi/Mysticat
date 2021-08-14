@@ -391,7 +391,7 @@ function init_gear_sets()
 	})--Futhark Mitons
 		
     sets.precast.WS['Dimidiation'] = {
-		ammo="Falcon Eye",
+		ammo="C. Palug Stone",
 		head="Meghanada Visor +2",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",

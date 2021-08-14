@@ -184,7 +184,7 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		ammo="Yetshila",
+		ammo="C. Palug Stone",
 		head="Meghanada Visor +2",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
@@ -199,7 +199,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-	ammo="Yamarang",
+	ammo="C. Palug Stone",
 	head="Meghanada Visor +2",
 	body="Meg. Cuirie +2",
 	hands="Meg. Gloves +2",
@@ -231,7 +231,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
 
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-	ammo="Falcon Eye",
+	ammo="C. Palug Stone",
 	head="Adhemar Bonnet",
 	body="Meg. Cuirie +2",
 	hands="Meg. Gloves +2",
@@ -244,9 +244,9 @@ function init_gear_sets()
 	})--Uk'uxkaj Cap Ishvara Earring Lustratio Subligar Yetshila
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {back="Letalis Mantle"})
 	sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {waist="Fotia Belt"})
-	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
-	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
-	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {waist="Fotia Belt",neck="Fotia Gorget"})
+	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",waist="Fotia Belt",neck="Fotia Gorget"})
+	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",waist="Fotia Belt",neck="Fotia Gorget"})
+	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {ammo="Yetshila",waist="Fotia Belt",neck="Fotia Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
 	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {back="Letalis Mantle"})
