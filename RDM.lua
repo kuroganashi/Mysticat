@@ -327,7 +327,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
-		body="Atrophy Tabard +1",
+		body="Shango Robe",
 		hands="Lethargy Gantherots +1",
 		ring1="Weatherspoon Ring +1",
 		ring2="Leviathan Ring +1",
@@ -335,7 +335,7 @@ function init_gear_sets()
 		waist="Refoccilation Stone",
 		legs="Psycloth Lappas",
 		feet="Merlinic Crackows",
-	}--Malignance / Digni.
+	}--Malignance / Digni. body="Atrophy Tabard +1"
 
     sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {main="Daybreak",head="Vitiation Chapeau +1"})
 
@@ -383,7 +383,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
-		body="Atrophy Tabard +1",
+		body="Shango Robe",
 		hands="Amalric Gages",
 		ring1="Weatherspoon Ring +1",
 		ring2="Kishar Ring",
@@ -391,7 +391,7 @@ function init_gear_sets()
 		waist="Refoccilation Stone",
 		legs="Merlinic Shalwar",
 		feet="Merlinic Crackows",
-	}--Shango Robe
+	}--Shango Robe body="Atrophy Tabard +1"
 
 	sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
 		main="Daybreak",
