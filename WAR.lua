@@ -422,7 +422,7 @@ function init_gear_sets()
 		head={ name="Valorous Mask", augments={'Accuracy+30','Weapon skill damage +4%','VIT+12',}},
 		body="Pumm. Lorica +3",
 		hands={ name="Odyssean Gauntlets", augments={'Accuracy+21','Weapon skill damage +4%','AGI+10','Attack+10',}},
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Sulev. Leggings +2",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
@@ -433,7 +433,7 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 	 })--24,554 (waist="Fotia Belt",) legs="Pumm. Cuisses +3", feet="Pumm. Calligae +3", Ioskeha Belt hands="Sule. Gauntlets +2",
  
-	--[[legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+	--[[legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Sulev. Leggings +2",waist="Fotia Belt",]]
  
 	--Old
@@ -442,7 +442,7 @@ function init_gear_sets()
 		head={ name="Valorous Mask", augments={'Accuracy+30','Weapon skill damage +4%','VIT+12',}},
 		body="Pumm. Lorica +3",
 		hands={ name="Odyssean Gauntlets", augments={'Accuracy+21','Weapon skill damage +4%','AGI+10','Attack+10',}},
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Sulev. Leggings +2",
 		ear1="Thrud Earring",
 		ring1="Titan Ring +1",
@@ -492,7 +492,7 @@ function init_gear_sets()
 		head={ name="Valorous Mask", augments={'Accuracy+30','Weapon skill damage +4%','VIT+12',}},
 		body="Pumm. Lorica +3",
 		hands={ name="Odyssean Gauntlets", augments={'Accuracy+21','Weapon skill damage +4%','AGI+10','Attack+10',}},
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Sulev. Leggings +2",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
@@ -599,7 +599,7 @@ function init_gear_sets()
 		back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}},
 		waist="Fotia Belt",
 		neck="Fotia Gorget",
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 	})
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {})
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
@@ -733,7 +733,7 @@ function init_gear_sets()
 		head={ name="Valorous Mask", augments={'Accuracy+30','Weapon skill damage +4%','VIT+12',}},
 		body="Pumm. Lorica +3",
 		hands={ name="Odyssean Gauntlets", augments={'Accuracy+21','Weapon skill damage +4%','AGI+10','Attack+10',}},
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Sulev. Leggings +2",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
@@ -1514,7 +1514,7 @@ function init_gear_sets()
 		ring2="Chirich Ring",
 		back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
 		waist="Ioskeha Belt",
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+5','Attack+14',}},
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		feet="Flam. Gambieras +1",
 	}--Argosy Hauberk
 		

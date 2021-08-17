@@ -285,9 +285,10 @@ function init_gear_sets()
     -- Specific weaponskill sets.
     sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {
 		neck="Fotia Gorget",
+		head="Meghanada Visor +2",
 		body="Phorcys Korazin",
 		hands="Meg. Gloves +2",
-		head="Meghanada Visor +2",
+		legs={ name="Valorous Hose", augments={'Attack+10','Weapon skill damage +4%','Accuracy+13',}},
 		waist="Fotia Belt",
 		ear2="Thrud Earring",
 	})--back="Buquwik Cape"/Vatic Byrnie/Mes. Haubergeon
