@@ -67,7 +67,7 @@ organizer_items = {
 	--tools4="Sanjaku-Tenugui",
 	--tools5="Shinobi-Tabi",
 	Sword1="Naegling",
-	Polearm1="Kaja Lance",
+	Polearm1="Shining One",
 	Shield1="Blurred Shield +1",
 	--orb="Macrocosmic Orb",
 } 
